@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Mail, Twitter, Linkedin, Globe, Zap, Activity, ChevronRight, Sparkles } from 'lucide-react';
+import { Github, Mail, Globe, Zap, Activity, ChevronRight, Sparkles } from 'lucide-react';
 
 const Footer = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
@@ -10,10 +10,10 @@ const Footer = () => {
 
   const footerLinks = {
     'Quick Links': [
-      { name: 'Working Groups', href: '#working-groups' },
-      { name: 'Events', href: '#events' },
-      { name: 'Resources', href: '#resources' },
-      { name: 'About', href: '#about' },
+      { name: 'Working Groups', href: '#working-groups', external: false },
+      { name: 'Events', href: '#events', external: false },
+      { name: 'Resources', href: '#resources', external: false },
+      { name: 'About', href: '#about', external: false },
     ],
     'Community': [
       { name: 'GitHub', href: 'https://github.com/aivisionforum', external: true },
@@ -22,9 +22,9 @@ const Footer = () => {
       { name: 'Contact Us', href: 'mailto:info@visionforum.ai', external: true },
     ],
     'Resources': [
-      { name: 'Reports', href: '#resources' },
+      { name: 'Reports', href: '#resources', external: false },
       { name: 'Open Source Projects', href: 'https://github.com/aivisionforum', external: true },
-      { name: 'Documentation', href: '#resources' },
+      { name: 'Documentation', href: '#resources', external: false },
       { name: 'Blog', href: '#', external: false },
     ],
   };

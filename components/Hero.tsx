@@ -30,7 +30,7 @@ const Hero = () => {
       clearInterval(statInterval);
       clearInterval(textInterval);
     };
-  }, []);
+  }, [rotatingTexts.length]);
 
   const stats = [
     { value: "20+", label: "Global Partners", icon: Globe },

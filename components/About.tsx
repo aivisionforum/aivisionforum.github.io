@@ -6,7 +6,6 @@ import { Target, Eye, Heart, Globe, Sparkles, Award, TrendingUp, Users, Zap } fr
 
 const About = () => {
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
-  const [activeInsight, setActiveInsight] = useState(0);
   
   const values = [
     {
@@ -138,7 +137,7 @@ const About = () => {
                 The AI Vision Forum serves as a strategic nexus for global dialogue on 
                 artificial intelligence governance. Through high-level interdisciplinary 
                 collaboration, we architect frameworks ensuring human agency, transparency, 
-                and ethical imperatives remain central to AI's societal integration.
+                and ethical imperatives remain central to AI&apos;s societal integration.
               </motion.p>
             </div>
           </motion.div>
