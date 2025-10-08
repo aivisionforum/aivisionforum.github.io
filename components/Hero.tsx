@@ -195,7 +195,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="mb-12 h-24"
+            className="mb-1"
           >
             <AnimatePresence mode="wait">
               <motion.p
@@ -273,7 +273,7 @@ const Hero = () => {
           >
             <motion.a
               href="#working-groups"
-              className="btn-strategic group inline-flex items-center"
+              className="btn-strategic group inline-flex items-center justify-center min-h-[52px]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -285,7 +285,7 @@ const Hero = () => {
               href="https://github.com/aivisionforum"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline"
+              className="btn-outline inline-flex items-center justify-center min-h-[52px]"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
