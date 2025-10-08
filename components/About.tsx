@@ -31,8 +31,14 @@ const About = () => {
   ];
 
   const partners = [
-    "Linux Foundation", "GOSIM", "Futurewei", "BAAI", "Moxin", 
-    "PyTorch Foundation", "Hugging Face", "CSDN", "WasmEdge"
+    { name: "Linux Foundation", url: "https://www.linuxfoundation.org" },
+    { name: "GOSIM", url: "https://www.gosim.org" },
+    { name: "BAAI", url: "https://www.baai.ac.cn/english.html" },
+    { name: "Moxin", url: "https://www.moxin.app/" },
+    { name: "PyTorch Foundation", url: "https://pytorch.org/foundation" },
+    { name: "Hugging Face", url: "https://huggingface.co" },
+    { name: "CSDN", url: "https://www.csdn.net" },
+    { name: "WasmEdge", url: "https://wasmedge.org" }
   ];
 
   return (
@@ -356,7 +362,7 @@ const About = () => {
           <div className="flex flex-wrap justify-center gap-4">
             {partners.map((partner, index) => (
               <motion.div
-                key={partner}
+                key={partner.name}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -364,9 +370,14 @@ const About = () => {
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="relative"
               >
-                <div className="px-6 py-3 glass-dark rounded-full border border-gray-800 hover:border-cyan-400/50 transition-all duration-300">
-                  <span className="text-gray-400 hover:text-white transition-colors font-medium">{partner}</span>
-                </div>
+                <a 
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-6 py-3 glass-dark rounded-full border border-gray-800 hover:border-cyan-400/50 transition-all duration-300"
+                >
+                  <span className="text-gray-400 hover:text-white transition-colors font-medium">{partner.name}</span>
+                </a>
               </motion.div>
             ))}
           </div>
