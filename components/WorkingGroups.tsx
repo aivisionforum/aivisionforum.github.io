@@ -35,6 +35,15 @@ const WorkingGroups = () => {
     },
     {
       id: 4,
+      title: "AI Maturity Levels",
+      icon: Cpu,
+      description: "Developing IEEE P3514 standards for AI capability classification and evaluation.",
+      stats: "IEEE P3514 Standard",
+      color: "blue",
+      link: "https://github.com/aivisionforum/ai-maturity"
+    },
+    {
+      id: 5,
       title: "Human-AI Synergy",
       icon: Brain,
       description: "Pioneering frameworks for augmented intelligence and human-machine collaboration.",
@@ -43,7 +52,7 @@ const WorkingGroups = () => {
       link: null
     },
     {
-      id: 5,
+      id: 6,
       title: "Creative Intelligence",
       icon: Users,
       description: "Exploring the intersection of artificial and human creativity in digital realms.",
@@ -58,6 +67,7 @@ const WorkingGroups = () => {
       cyan: { border: "border-cyan-400/30", bg: "bg-cyan-400/10", text: "text-cyan-400" },
       purple: { border: "border-purple-400/30", bg: "bg-purple-400/10", text: "text-purple-400" },
       green: { border: "border-green-400/30", bg: "bg-green-400/10", text: "text-green-400" },
+      blue: { border: "border-blue-400/30", bg: "bg-blue-400/10", text: "text-blue-400" },
       orange: { border: "border-orange-400/30", bg: "bg-orange-400/10", text: "text-orange-400" },
       pink: { border: "border-pink-400/30", bg: "bg-pink-400/10", text: "text-pink-400" }
     };
@@ -94,7 +104,7 @@ const WorkingGroups = () => {
             <span className="gradient-text">GROUPS</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Five specialized themes driving innovation across critical AI domains
+            Six specialized themes driving innovation across critical AI domains
           </p>
         </motion.div>
 
