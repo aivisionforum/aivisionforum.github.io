@@ -195,64 +195,6 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          {/* Network Stats */}
-          <motion.div 
-            className="glass-dark rounded-xl p-6 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <motion.div 
-                  className="text-2xl font-bold text-cyan-400"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                >
-                  5K+
-                </motion.div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider mt-1">Community Members</div>
-              </div>
-              <div className="text-center">
-                <motion.div 
-                  className="text-2xl font-bold text-purple-400"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                >
-                  45+
-                </motion.div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider mt-1">Cities</div>
-              </div>
-              <div className="text-center">
-                <motion.div 
-                  className="text-2xl font-bold text-green-400"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                >
-                  20+
-                </motion.div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider mt-1">Partners</div>
-              </div>
-              <div className="text-center">
-                <motion.div 
-                  className="text-2xl font-bold text-yellow-400"
-                  initial={{ opacity: 0, scale: 0 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 }}
-                >
-                  27
-                </motion.div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider mt-1">Active Projects</div>
-              </div>
-            </div>
-          </motion.div>
-          
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright with animation */}
             <motion.div

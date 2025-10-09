@@ -53,6 +53,12 @@ const Navigation = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 hover:w-full" />
               </Link>
             ))}
+            <Link
+              href="/join"
+              className="px-6 py-2 text-xs font-medium tracking-widest text-white border border-purple-400/30 hover:bg-purple-400/10 transition-all duration-300"
+            >
+              JOIN
+            </Link>
             <a
               href="https://github.com/aivisionforum"
               target="_blank"
@@ -91,6 +97,13 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
+              <Link
+                href="/join"
+                onClick={() => setIsOpen(false)}
+                className="text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors"
+              >
+                JOIN
+              </Link>
               <a
                 href="https://github.com/aivisionforum"
                 target="_blank"

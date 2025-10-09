@@ -140,10 +140,10 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                The AI Vision Forum serves as a strategic nexus for global dialogue on 
-                artificial intelligence governance. Through high-level interdisciplinary 
-                collaboration, we architect frameworks ensuring human agency, transparency, 
-                and ethical imperatives remain central to AI&apos;s societal integration.
+                The AI Vision Forum serves as a global platform for strategic dialogue on 
+                artificial intelligence development, innovation, and governance. Through high-level 
+                interdisciplinary collaboration, the initiative architects frameworks ensuring human agency, 
+                transparency, and ethical imperatives remain central to AI&apos;s societal integration.
               </motion.p>
             </div>
           </motion.div>
@@ -311,9 +311,9 @@ const About = () => {
                   transition={{ delay: 0.6 }}
                 >
                   <TrendingUp className="w-8 h-8 mx-auto mb-2" />
-                  95%
+                  5
                 </motion.div>
-                <div className="text-xs text-gray-600 uppercase tracking-wider">Strategic Alignment</div>
+                <div className="text-xs text-gray-600 uppercase tracking-wider">Working Groups</div>
               </div>
               <div className="text-center">
                 <motion.div 
