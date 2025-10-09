@@ -22,23 +22,23 @@ export default function CodeOfConduct() {
             <p className="text-gray-400 mb-8">Version 1.0 - October 2024</p>
             
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">Our Pledge</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Community Pledge</h2>
               <p className="text-gray-300 mb-4">
-                We, as members, contributors, and leaders of the AI Vision Forum, pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+                Members, contributors, and leaders of the AI Vision Forum pledge to make participation in the community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
               </p>
               <p className="text-gray-300 mb-4">
-                We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community focused on advancing human-centric AI.
+                All participants pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community focused on advancing human-centric AI.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">Our Standards</h2>
+              <h2 className="text-2xl font-bold text-white mb-4">Community Standards</h2>
               <p className="text-gray-300 mb-4">Examples of behavior that contributes to a positive environment include:</p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2 mb-4">
                 <li>Demonstrating empathy and kindness toward other people</li>
                 <li>Being respectful of differing opinions, viewpoints, and experiences</li>
                 <li>Giving and gracefully accepting constructive feedback</li>
-                <li>Accepting responsibility and apologizing to those affected by our mistakes</li>
+                <li>Accepting responsibility and apologizing to those affected by mistakes</li>
                 <li>Focusing on what is best for the overall community</li>
                 <li>Showing respect for the ethical implications of AI development</li>
               </ul>
@@ -57,7 +57,7 @@ export default function CodeOfConduct() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">Enforcement Responsibilities</h2>
               <p className="text-gray-300 mb-4">
-                Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+                Community leaders are responsible for clarifying and enforcing the standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
               </p>
               <p className="text-gray-300 mb-4">
                 Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct.

@@ -24,27 +24,27 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
               <p className="text-gray-300 mb-4">
-                AI Vision Forum (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or participate in our activities.
+                AI Vision Forum is committed to protecting your privacy. This Privacy Policy explains how the forum collects, uses, discloses, and safeguards your information when you visit the website or participate in activities.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">2. Information We Collect</h2>
-              <p className="text-gray-300 mb-4">We may collect information about you in various ways:</p>
+              <h2 className="text-2xl font-bold text-white mb-4">2. Information Collection</h2>
+              <p className="text-gray-300 mb-4">The forum may collect information about you in various ways:</p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
                 <li>Personal Data: Name, email address, and organization affiliation when you register for events or join mailing lists</li>
-                <li>Usage Data: Information about how you interact with our website</li>
+                <li>Usage Data: Information about how you interact with the website</li>
                 <li>Contributions: Content you provide through GitHub repositories or forum discussions</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
-              <p className="text-gray-300 mb-4">We use the information we collect to:</p>
+              <h2 className="text-2xl font-bold text-white mb-4">3. Information Usage</h2>
+              <p className="text-gray-300 mb-4">The collected information is used to:</p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
                 <li>Facilitate participation in AI Vision Forum activities and events</li>
-                <li>Send updates about our initiatives, research, and community activities</li>
-                <li>Improve our website and services</li>
+                <li>Send updates about initiatives, research, and community activities</li>
+                <li>Improve the website and services</li>
                 <li>Foster collaboration within the AI community</li>
               </ul>
             </section>
@@ -52,11 +52,11 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">4. Data Sharing and Disclosure</h2>
               <p className="text-gray-300 mb-4">
-                We do not sell, trade, or rent your personal information to third parties. We may share information with:
+                AI Vision Forum does not sell, trade, or rent your personal information to third parties. Information may be shared with:
               </p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
                 <li>Partner organizations for collaborative initiatives</li>
-                <li>Service providers who assist in our operations</li>
+                <li>Service providers who assist in operations</li>
                 <li>Legal authorities when required by law</li>
               </ul>
             </section>
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">5. Data Security</h2>
               <p className="text-gray-300 mb-4">
-                We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+                Appropriate technical and organizational measures are implemented to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
               </p>
             </section>
 
@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold text-white mb-4">6. Your Rights</h2>
               <p className="text-gray-300 mb-4">You have the right to:</p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Access the personal information we hold about you</li>
+                <li>Access the personal information held about you</li>
                 <li>Request correction of inaccurate information</li>
                 <li>Request deletion of your information</li>
                 <li>Opt-out of communications</li>

@@ -301,7 +301,7 @@ const Resources = () => {
               
               <h3 className="text-2xl font-bold text-white mb-4">ACCESS STRATEGIC UPDATES</h3>
               <p className="text-gray-400 mb-6">
-                Join our network for exclusive insights on AI governance frameworks, 
+                Join the network for exclusive insights on AI governance frameworks, 
                 strategic initiatives, and global cooperation efforts.
               </p>
               

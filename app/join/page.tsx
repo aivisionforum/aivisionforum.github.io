@@ -62,7 +62,7 @@ export default function JoinMailingList() {
               className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full mb-8"
             >
               <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Join Our Community</span>
+              <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Join the Community</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -71,7 +71,7 @@ export default function JoinMailingList() {
             </h1>
             
             <p className="text-xl text-gray-400 mb-8">
-              Join our global network of AI researchers, developers, and thought leaders shaping the future of human-centric artificial intelligence.
+              Join the global network of AI researchers, developers, and thought leaders shaping the future of human-centric artificial intelligence.
             </p>
 
             {/* Benefits */}
@@ -125,12 +125,12 @@ export default function JoinMailingList() {
             >
               <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                 <Mail className="w-6 h-6 text-cyan-400" />
-                Subscribe to Our Mailing List
+                Subscribe to the Mailing List
               </h2>
               
               <div className="text-center">
                 <p className="text-gray-400 mb-6">
-                  Click the button below to join our mailing list and connect with the global AI Vision Forum community.
+                  Click the button below to join the mailing list and connect with the global AI Vision Forum community.
                 </p>
                 
                 <motion.a
@@ -142,7 +142,7 @@ export default function JoinMailingList() {
                   className="inline-flex items-center gap-2 btn-strategic px-8 py-4 text-lg"
                 >
                   <Mail className="w-5 h-5" />
-                  Join Our Mailing List
+                  Join the Mailing List
                   <ArrowRight className="w-5 h-5" />
                 </motion.a>
                 
@@ -154,7 +154,7 @@ export default function JoinMailingList() {
               </div>
               
               <p className="text-xs text-gray-500 mt-4 text-center">
-                By subscribing, you agree to our Privacy Policy and Terms of Service.
+                By subscribing, you agree to the Privacy Policy and Terms of Service.
               </p>
             </motion.div>
           </div>

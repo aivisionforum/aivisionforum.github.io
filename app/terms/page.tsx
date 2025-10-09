@@ -24,7 +24,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
               <p className="text-gray-300 mb-4">
-                By accessing and using the AI Vision Forum website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+                By accessing and using the AI Vision Forum website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the services.
               </p>
             </section>
 
@@ -43,7 +43,7 @@ export default function TermsOfService() {
 
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">3. User Responsibilities</h2>
-              <p className="text-gray-300 mb-4">As a user of our services, you agree to:</p>
+              <p className="text-gray-300 mb-4">As a user of the services, you agree to:</p>
               <ul className="list-disc pl-6 text-gray-300 space-y-2">
                 <li>Provide accurate and complete information when required</li>
                 <li>Maintain the confidentiality of any account credentials</li>
@@ -56,7 +56,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">4. Intellectual Property</h2>
               <p className="text-gray-300 mb-4">
-                Content provided through AI Vision Forum is licensed under various open-source licenses as specified in individual projects. Users retain ownership of their contributions while granting AI Vision Forum a license to use, modify, and distribute such contributions in accordance with our mission.
+                Content provided through AI Vision Forum is licensed under various open-source licenses as specified in individual projects. Users retain ownership of their contributions while granting AI Vision Forum a license to use, modify, and distribute such contributions in accordance with the forum's mission.
               </p>
             </section>
 
@@ -75,7 +75,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">6. Disclaimer of Warranties</h2>
               <p className="text-gray-300 mb-4">
-                Our services are provided &quot;as is&quot; without warranties of any kind, either express or implied. We do not guarantee the accuracy, completeness, or usefulness of any information provided.
+                The services are provided &quot;as is&quot; without warranties of any kind, either express or implied. AI Vision Forum does not guarantee the accuracy, completeness, or usefulness of any information provided.
               </p>
             </section>
 
@@ -89,7 +89,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">8. Modifications</h2>
               <p className="text-gray-300 mb-4">
-                We reserve the right to modify these Terms of Service at any time. Changes will be effective upon posting to the website.
+                AI Vision Forum reserves the right to modify these Terms of Service at any time. Changes will be effective upon posting to the website.
               </p>
             </section>
 
