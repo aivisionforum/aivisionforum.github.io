@@ -8,15 +8,6 @@ const WorkingGroups = () => {
   const groups = [
     {
       id: 1,
-      title: "AI & Education",
-      icon: BookOpen,
-      description: "Revolutionizing learning paradigms through AI-enhanced pedagogical frameworks and adaptive systems.",
-      stats: "12 Active Projects",
-      color: "cyan",
-      link: null
-    },
-    {
-      id: 2,
       title: "Ethics & Governance",
       icon: Shield,
       description: "Establishing robust governance frameworks for responsible AI deployment at scale.",
@@ -25,7 +16,7 @@ const WorkingGroups = () => {
       link: "https://github.com/aivisionforum/ai-ethics-governance"
     },
     {
-      id: 3,
+      id: 2,
       title: "Global Digital Infrastructure",
       icon: Globe2,
       description: "Building AI as a global digital public good through distributed infrastructure.",
@@ -34,13 +25,22 @@ const WorkingGroups = () => {
       link: "https://github.com/aivisionforum/ai-global-digital-public-good"
     },
     {
-      id: 4,
+      id: 3,
       title: "AI Maturity",
       icon: Cpu,
       description: "Developing IEEE P3514 standards for AI capability classification and evaluation.",
       stats: "IEEE P3514 Standard",
       color: "blue",
       link: "https://github.com/aivisionforum/ai-maturity"
+    },
+    {
+      id: 4,
+      title: "AI & Education",
+      icon: BookOpen,
+      description: "Revolutionizing learning paradigms through AI-enhanced pedagogical frameworks and adaptive systems.",
+      stats: "12 Active Projects",
+      color: "cyan",
+      link: null
     },
     {
       id: 5,
