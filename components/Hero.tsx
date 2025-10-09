@@ -104,14 +104,14 @@ const Hero = () => {
                 style={{
                   width: '0.5px',
                   height: '0.5px',
-                  backgroundColor: 'rgba(0, 212, 255, 0.3)',
+                  backgroundColor: 'rgba(0, 212, 255, 0.6)',
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                 }}
                 animate={{
                   y: [-10, 10, -10],
                   x: [-5, 5, -5],
-                  opacity: [0.1, 0.3, 0.1],
+                  opacity: [0.3, 0.6, 0.3],
                 }}
                 transition={{
                   duration: 5 + Math.random() * 5,
