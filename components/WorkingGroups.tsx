@@ -11,7 +11,7 @@ const WorkingGroups = () => {
       title: "Ethics & Governance",
       icon: Shield,
       description: "Establishing robust governance frameworks for responsible AI deployment at scale.",
-      stats: "8 Policy Papers",
+      stats: "Framework Development",
       color: "purple",
       link: "https://github.com/aivisionforum/ai-ethics-governance"
     },
@@ -20,7 +20,7 @@ const WorkingGroups = () => {
       title: "Global Digital Infrastructure",
       icon: Globe2,
       description: "Building AI as a global digital public good through distributed infrastructure.",
-      stats: "15 Deployments",
+      stats: "Open Source Initiative",
       color: "green",
       link: "https://github.com/aivisionforum/ai-global-digital-public-good"
     },
@@ -38,7 +38,7 @@ const WorkingGroups = () => {
       title: "AI & Education",
       icon: BookOpen,
       description: "Revolutionizing learning paradigms through AI-enhanced pedagogical frameworks and adaptive systems.",
-      stats: "12 Active Projects",
+      stats: "Research Initiative",
       color: "cyan",
       link: null
     },
@@ -47,7 +47,7 @@ const WorkingGroups = () => {
       title: "Human-AI Synergy",
       icon: Brain,
       description: "Pioneering frameworks for augmented intelligence and human-machine collaboration.",
-      stats: "23 Research Papers",
+      stats: "Collaborative Research",
       color: "orange",
       link: null
     },
@@ -56,7 +56,7 @@ const WorkingGroups = () => {
       title: "Creative Intelligence",
       icon: Users,
       description: "Exploring the intersection of artificial and human creativity in digital realms.",
-      stats: "7 Innovations",
+      stats: "Exploratory Phase",
       color: "pink",
       link: null
     }
