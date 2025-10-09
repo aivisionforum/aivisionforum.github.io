@@ -35,7 +35,7 @@ const WorkingGroups = () => {
     },
     {
       id: 4,
-      title: "AI Maturity Levels",
+      title: "AI Maturity",
       icon: Cpu,
       description: "Developing IEEE P3514 standards for AI capability classification and evaluation.",
       stats: "IEEE P3514 Standard",
