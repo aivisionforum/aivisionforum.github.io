@@ -36,7 +36,7 @@ jobs:
         run: npm install
 
       - name: Build with Next.js
-        run: npm run build
+        run: npx next build
         
       - name: Check output directory
         run: ls -la out/
