@@ -29,11 +29,11 @@ const Resources = () => {
           type: "PDF"
         },
         {
-          title: "Global Cooperation for Human-Centered AI",
-          subtitle: "GOSIM AI Vision Forum 2025 Report",
-          description: "Key insights from the forum covering AI education, creativity, governance, and digital public goods.",
+          title: "GOSIM AI Vision Forum 2025 Report",
+          subtitle: "Coming Soon",
+          description: "Comprehensive report from the 2025 forum covering AI education, creativity, governance, and digital public goods. Expected release: Q1 2025.",
           link: "#",
-          type: "PDF"
+          type: "Coming Soon"
         }
       ]
     },
@@ -110,6 +110,8 @@ const Resources = () => {
         return <Mail className="w-4 h-4" />;
       case 'Video':
         return <Video className="w-4 h-4" />;
+      case 'Coming Soon':
+        return <Sparkles className="w-4 h-4" />;
       default:
         return <ExternalLink className="w-4 h-4" />;
     }
