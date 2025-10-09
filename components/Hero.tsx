@@ -285,6 +285,7 @@ const Hero = () => {
             <motion.a
               href="#working-groups"
               className="btn-strategic group inline-flex items-center justify-center min-h-[52px]"
+              style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -297,6 +298,7 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline inline-flex items-center justify-center min-h-[52px]"
+              style={{ position: 'relative', zIndex: 10, pointerEvents: 'auto' }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
