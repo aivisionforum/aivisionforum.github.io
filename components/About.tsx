@@ -311,7 +311,7 @@ const About = () => {
                   transition={{ delay: 0.6 }}
                 >
                   <TrendingUp className="w-8 h-8 mx-auto mb-2" />
-                  5
+                  6
                 </motion.div>
                 <div className="text-xs text-gray-600 uppercase tracking-wider">Working Groups</div>
               </div>

@@ -41,7 +41,7 @@ const Events = () => {
       date: "OCTOBER 2024",
       location: "Virtual & Hybrid",
       attendees: "500+",
-      description: "Foundation summit establishing five strategic working groups for human-centered AI.",
+      description: "Foundation summit establishing six strategic working groups for human-centered AI.",
       link: null,
       status: "COMPLETED",
       upcoming: false,

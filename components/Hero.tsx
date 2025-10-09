@@ -34,7 +34,7 @@ const Hero = () => {
 
   const stats = [
     { value: "20+", label: "Global Partners", icon: Globe },
-    { value: "5", label: "Strategic Initiatives", icon: TrendingUp },
+    { value: "6", label: "Strategic Initiatives", icon: TrendingUp },
     { value: "100%", label: "Open Source Commitment", icon: Code }
   ];
 
