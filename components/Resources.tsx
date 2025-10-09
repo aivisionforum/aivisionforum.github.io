@@ -83,11 +83,11 @@ const Resources = () => {
           type: "Mailing List"
         },
         {
-          title: "GOSIM Community",
-          subtitle: "Open source AI ecosystem",
-          description: "Join the broader GOSIM community working on open source AI solutions.",
-          link: "https://gosim.org",
-          type: "Web"
+          title: "AI Maturity",
+          subtitle: "IEEE P3514 Working Group",
+          description: "Join the AI Maturity working group developing IEEE P3514 standards for AI capability classification.",
+          link: "https://aivisionforum.groups.io/g/ai-maturity",
+          type: "Mailing List"
         }
       ]
     }
