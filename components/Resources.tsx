@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, Github, Mail, BookOpen, Video, Download, ExternalLink, Sparkles, ChevronRight, Zap } from 'lucide-react';
+import { FileText, Github, Mail, BookOpen, Video, Download, ExternalLink, Sparkles, ChevronRight, Zap, ArrowRight } from 'lucide-react';
 
 const Resources = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState(0);
+  const [qrCodeUrl, setQrCodeUrl] = useState('');
   
   const resourceCategories = [
     {
@@ -14,25 +15,25 @@ const Resources = () => {
       icon: FileText,
       items: [
         {
+          title: "GOSIM AI Strategy Forum 2025 Paris",
+          subtitle: "Linux Foundation Report",
+          description: "Comprehensive report on global AI strategy from the Paris summit, covering governance, innovation, and cooperation.",
+          link: "https://www.linuxfoundation.org/research/GOSIM-2025?hsLang=en",
+          type: "Web"
+        },
+        {
+          title: "Global Digital Collaboration 2025 Geneva",
+          subtitle: "AI For Humanity Track Report",
+          description: "Insights on human-centered AI development and global collaboration from the GDC conference.",
+          link: "https://ai4humanity.ai/pdf/GDC%20AI%20For%20Humanity%20Track%20Report%20-%20v2.0.pdf",
+          type: "PDF"
+        },
+        {
           title: "Global Cooperation for Human-Centered AI",
           subtitle: "GOSIM AI Vision Forum 2025 Report",
           description: "Key insights from the forum covering AI education, creativity, governance, and digital public goods.",
           link: "#",
           type: "PDF"
-        },
-        {
-          title: "Model Openness Framework",
-          subtitle: "Linux Foundation Research",
-          description: "Practical guidance for evaluating openness and completeness of machine learning models.",
-          link: "https://lfresearch.org/mof",
-          type: "Web"
-        },
-        {
-          title: "OpenMDW License Agreement v1.0",
-          subtitle: "Purpose-built license for ML models",
-          description: "Permissive license addressing the unique composition of machine learning models.",
-          link: "https://github.com/aivisionforum/licenses",
-          type: "GitHub"
         }
       ]
     },
@@ -71,7 +72,7 @@ const Resources = () => {
           title: "AI Ethics Mailing List",
           subtitle: "Join the discussion",
           description: "Participate in ongoing conversations about AI ethics and governance.",
-          link: "https://aivisionforum.groups.io/g/ai-ethics",
+          link: "https://aivisionforum.groups.io/g/ai-ethics-governance",
           type: "Mailing List"
         },
         {
@@ -89,35 +90,15 @@ const Resources = () => {
           type: "Web"
         }
       ]
-    },
-    {
-      title: "Educational Resources",
-      icon: BookOpen,
-      items: [
-        {
-          title: "AI Maturity Models",
-          subtitle: "Strategic frameworks",
-          description: "Assess and guide AI development and governance in organizations.",
-          link: "#",
-          type: "Guide"
-        },
-        {
-          title: "Humanistic AI Framework",
-          subtitle: "Design principles",
-          description: "Building AI systems that empower human agency and values.",
-          link: "#",
-          type: "Framework"
-        },
-        {
-          title: "Open Source AI Best Practices",
-          subtitle: "Community guidelines",
-          description: "Best practices for developing and deploying open source AI models.",
-          link: "#",
-          type: "Guide"
-        }
-      ]
     }
   ];
+
+  useEffect(() => {
+    // Generate QR code for the Groups.io join link
+    const groupsIoUrl = 'https://aivisionforum.groups.io/g/members/join';
+    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(groupsIoUrl)}`;
+    setQrCodeUrl(qrApiUrl);
+  }, []);
 
   const getIconForType = (type: string) => {
     switch (type) {
@@ -323,26 +304,34 @@ const Resources = () => {
                 Join our network for exclusive insights on AI governance frameworks, 
                 strategic initiatives, and global cooperation efforts.
               </p>
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <input
-                  type="email"
-                  placeholder="Executive Email"
-                  className="flex-1 px-6 py-3 bg-black/50 border border-gray-800 rounded-full text-white placeholder-gray-600 focus:outline-none focus:border-cyan-400 transition-all duration-300"
-                />
-                <motion.button 
-                  className="btn-strategic"
+              
+              <div className="flex flex-col items-center gap-6">
+                <motion.a
+                  href="https://aivisionforum.groups.io/g/members/join"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 btn-strategic"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  SUBSCRIBE
-                </motion.button>
-              </motion.div>
+                  JOIN OUR MAILING LIST
+                  <ArrowRight className="w-4 h-4" />
+                </motion.a>
+                
+                {/* QR Code */}
+                <div className="flex flex-col items-center gap-3">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">Or scan to join</p>
+                  <div className="bg-white p-3 rounded-lg">
+                    {qrCodeUrl && (
+                      <img 
+                        src={qrCodeUrl} 
+                        alt="QR Code for joining AI Vision Forum mailing list"
+                        className="w-32 h-32"
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

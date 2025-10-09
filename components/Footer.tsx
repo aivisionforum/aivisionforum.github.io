@@ -18,14 +18,12 @@ const Footer = () => {
     'Community': [
       { name: 'GitHub', href: 'https://github.com/aivisionforum', external: true },
       { name: 'Mailing Lists', href: 'https://aivisionforum.groups.io', external: true },
-      { name: 'GOSIM', href: 'https://gosim.org', external: true },
-      { name: 'Contact Us', href: 'mailto:info@visionforum.ai', external: true },
+      { name: 'Contact Us', href: 'mailto:contact@visionforum.ai', external: true },
     ],
     'Resources': [
       { name: 'Reports', href: '#resources', external: false },
       { name: 'Open Source Projects', href: 'https://github.com/aivisionforum', external: true },
       { name: 'Documentation', href: '#resources', external: false },
-      { name: 'Blog', href: '#', external: false },
     ],
   };
 
@@ -286,10 +284,14 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex flex-wrap gap-6 text-sm"
             >
-              {['Privacy Policy', 'Terms of Service', 'Code of Conduct'].map((item, index) => (
+              {[
+                { name: 'Privacy Policy', href: '/privacy' },
+                { name: 'Terms of Service', href: '/terms' },
+                { name: 'Code of Conduct', href: '/code-of-conduct' }
+              ].map((item, index) => (
                 <motion.a 
-                  key={item}
-                  href="#" 
+                  key={item.name}
+                  href={item.href} 
                   className="text-gray-600 hover:text-cyan-400 transition-all duration-300 relative group"
                   whileHover={{ y: -2 }}
                   initial={{ opacity: 0 }}
@@ -297,7 +299,7 @@ const Footer = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
                 </motion.a>
               ))}

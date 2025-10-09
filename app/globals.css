@@ -179,12 +179,12 @@ body {
 
 /* Section spacing */
 .section {
-  padding: 30px 20px;
+  padding: 50px 20px;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding: 40px 40px;
+    padding: 60px 40px;
   }
 }
 
@@ -289,6 +289,74 @@ body {
   pointer-events: none;
 }
 
+/* Subtle space background overlay */
+.space-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at top left, rgba(27, 39, 53, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Subtle stars effect */
+.subtle-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 50px 50px, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 80px 10px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.7), transparent);
+  background-repeat: repeat;
+  background-size: 250px 250px;
+  opacity: 1;
+}
+
+/* Subtle meteor effect */
+.subtle-meteor {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  animation: subtle-meteor-fly 10s linear infinite;
+  pointer-events: none;
+  transform: rotate(45deg);
+}
+
+.subtle-meteor::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(270deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateY(-50%);
+}
+
+@keyframes subtle-meteor-fly {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(45deg);
+  }
+  1% {
+    opacity: 0.7;
+    transform: translate(5px, 5px) rotate(45deg);
+  }
+  98% {
+    opacity: 0.7;
+    transform: translate(795px, 795px) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(800px, 800px) rotate(45deg);
+  }
+}
 
 /* Matrix rain effect (subtle) */
 .matrix-bg {

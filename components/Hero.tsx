@@ -40,14 +40,22 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section relative overflow-hidden bg-black">
+      {/* Subtle Space Effects */}
+      <div className="absolute inset-0" style={{ zIndex: 0 }}>
+        <div className="space-overlay" />
+        <div className="subtle-stars" />
+        {/* Subtle Meteors */}
+        {mounted && (
+          <>
+            <div className="subtle-meteor" style={{ top: '-10%', left: '-10%', animationDelay: '0s', animationDuration: '15s' }} />
+            <div className="subtle-meteor" style={{ top: '-15%', left: '20%', animationDelay: '5s', animationDuration: '18s' }} />
+            <div className="subtle-meteor" style={{ top: '5%', left: '-15%', animationDelay: '10s', animationDuration: '20s' }} />
+          </>
+        )}
+      </div>
+      
       {/* Animated Background Layers */}
-      <div className="absolute inset-0 -z-10">
-        {/* Grid background */}
-        <div className="absolute inset-0 grid-futuristic" />
-        
-        {/* Scanning line effect */}
-        <div className="scan-line" />
-        
+      <div className="absolute inset-0" style={{ zIndex: 1 }}>
         {/* Data visualization overlay */}
         <div className="absolute inset-0 data-grid opacity-20" />
         
@@ -57,7 +65,7 @@ const Hero = () => {
             <motion.div
               className="absolute top-20 left-10 w-72 h-72 rounded-full"
               style={{
-                background: "radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%)",
+                background: "radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%)",
                 filter: "blur(40px)",
               }}
               animate={{
@@ -74,7 +82,7 @@ const Hero = () => {
             <motion.div
               className="absolute bottom-20 right-10 w-96 h-96 rounded-full"
               style={{
-                background: "radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%)",
+                background: "radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%)",
                 filter: "blur(60px)",
               }}
               animate={{
@@ -89,21 +97,24 @@ const Hero = () => {
               }}
             />
             {/* Particle field */}
-            {[...Array(20)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+                className="absolute rounded-full"
                 style={{
+                  width: '0.5px',
+                  height: '0.5px',
+                  backgroundColor: 'rgba(0, 212, 255, 0.3)',
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                 }}
                 animate={{
-                  y: [-20, 20, -20],
-                  x: [-10, 10, -10],
-                  opacity: [0.2, 1, 0.2],
+                  y: [-10, 10, -10],
+                  x: [-5, 5, -5],
+                  opacity: [0.1, 0.3, 0.1],
                 }}
                 transition={{
-                  duration: 3 + Math.random() * 4,
+                  duration: 5 + Math.random() * 5,
                   repeat: Infinity,
                   delay: Math.random() * 2,
                   ease: "easeInOut",
@@ -217,7 +228,7 @@ const Hero = () => {
               }}
               transition={{ duration: 3, repeat: Infinity }}
             />
-            <p className="text-lg text-gray-500 max-w-3xl text-executive">
+            <p className="text-lg text-gray-500 max-w-3xl text-executive mb-12">
               A global consortium of visionary leaders, researchers, and technologists 
               collaborating to establish governance frameworks, ethical standards, and 
               strategic initiatives for the responsible advancement of artificial intelligence.
@@ -315,7 +326,7 @@ const Hero = () => {
                 </motion.div>
                 <div className="min-w-[140px]">
                   <span className="text-gray-600 text-xs uppercase tracking-wider block">Next Summit</span>
-                  <div className="text-white text-sm mt-1 font-semibold">Paris 2025</div>
+                  <div className="text-white text-sm mt-1 font-semibold">Paris 2026</div>
                 </div>
                 <div className="min-w-[140px]">
                   <span className="text-gray-600 text-xs uppercase tracking-wider block">Active Projects</span>

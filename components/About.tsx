@@ -32,7 +32,7 @@ const About = () => {
 
   const partners = [
     { name: "Linux Foundation", url: "https://www.linuxfoundation.org" },
-    { name: "GOSIM", url: "https://www.gosim.org" },
+    { name: "Eclipse Foundation", url: "https://www.eclipse.org" },
     { name: "BAAI", url: "https://www.baai.ac.cn/english.html" },
     { name: "Moxin", url: "https://www.moxin.app/" },
     { name: "PyTorch Foundation", url: "https://pytorch.org/foundation" },

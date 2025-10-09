@@ -12,27 +12,27 @@ const Events = () => {
       id: 1,
       title: "AI VISION SUMMIT PARIS",
       subtitle: "Open Source AI Strategy Forum",
-      date: "MAY 2025",
+      date: "MAY 2024",
       location: "Paris, France",
       attendees: "200+",
       description: "Strategic discussions on collaborative frameworks for next-generation AI development.",
-      link: "https://paris2025.gosim.org/os-ai-strategy-forum/",
-      status: "REGISTRATION OPEN",
-      upcoming: true,
-      featured: true
+      link: "https://paris2024.gosim.org/os-ai-strategy-forum/",
+      status: "COMPLETED",
+      upcoming: false,
+      featured: false
     },
     {
       id: 2,
       title: "GLOBAL AI COOPERATION SUMMIT",
       subtitle: "Annual Forum Hangzhou",
-      date: "SEPTEMBER 2025",
+      date: "SEPTEMBER 2024",
       location: "Hangzhou, China",
       attendees: "300+",
       description: "Convergence of global AI leaders, researchers, and policymakers from 20+ nations.",
       link: "https://forum.gosim.org",
-      status: "EARLY BIRD",
-      upcoming: true,
-      featured: true
+      status: "COMPLETED",
+      upcoming: false,
+      featured: false
     },
     {
       id: 3,
@@ -46,6 +46,19 @@ const Events = () => {
       status: "COMPLETED",
       upcoming: false,
       featured: false
+    },
+    {
+      id: 4,
+      title: "AI VISION SUMMIT PARIS 2026",
+      subtitle: "Advancing Human-Centric AI Innovation",
+      date: "MAY 2026",
+      location: "Paris, France",
+      attendees: "400+",
+      description: "Annual global summit bringing together leaders to shape AI innovation, foster open collaboration, and advance human-centric artificial intelligence.",
+      link: null,
+      status: "COMING SOON",
+      upcoming: true,
+      featured: true
     }
   ];
 
@@ -231,9 +244,7 @@ const Events = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
-                href="https://aivisionforum.groups.io/g/meetups"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contact@visionforum.ai"
                 className="btn-strategic"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -241,7 +252,7 @@ const Events = () => {
                 FIND LOCAL CHAPTER
               </motion.a>
               <motion.a
-                href="mailto:events@visionforum.ai"
+                href="mailto:contact@visionforum.ai"
                 className="btn-outline"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
