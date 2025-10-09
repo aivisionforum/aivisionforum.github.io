@@ -311,35 +311,32 @@ const Hero = () => {
             transition={{ delay: 1.2 }}
             className="mt-16 glass-dark rounded-xl p-6"
           >
-            <div className="flex flex-wrap justify-between items-center gap-6">
-              <div className="flex flex-wrap gap-8">
-                <motion.div
-                  animate={{ opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="min-w-[140px]"
-                >
-                  <span className="text-gray-600 text-xs uppercase tracking-wider block">Status</span>
-                  <div className="flex items-center gap-2 mt-1">
-                    <Activity className="w-4 h-4 text-green-400" />
-                    <span className="text-green-400 text-sm font-bold">OPERATIONAL</span>
-                  </div>
-                </motion.div>
-                <div className="min-w-[140px]">
-                  <span className="text-gray-600 text-xs uppercase tracking-wider block">Next Summit</span>
-                  <div className="text-white text-sm mt-1 font-semibold">Paris 2026</div>
+            <div className="flex flex-wrap gap-8 justify-center">
+              <motion.div
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="min-w-[140px]"
+              >
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Status</span>
+                <div className="flex items-center gap-2 mt-1">
+                  <Activity className="w-4 h-4 text-green-400" />
+                  <span className="text-green-400 text-sm font-bold">OPERATIONAL</span>
                 </div>
-                <div className="min-w-[140px]">
-                  <span className="text-gray-600 text-xs uppercase tracking-wider block">Active Projects</span>
-                  <motion.div 
-                    className="text-cyan-400 text-sm mt-1 font-bold"
-                    animate={{ opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  >
-                    27 Initiatives
-                  </motion.div>
-                </div>
+              </motion.div>
+              <div className="min-w-[140px]">
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Next Summit</span>
+                <div className="text-white text-sm mt-1 font-semibold">Paris 2026</div>
               </div>
-              
+              <div className="min-w-[140px]">
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Active Projects</span>
+                <motion.div 
+                  className="text-cyan-400 text-sm mt-1 font-bold"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
+                  27 Initiatives
+                </motion.div>
+              </div>
               {/* Live collaboration counter */}
               <div className="min-w-[140px]">
                 <span className="text-gray-600 text-xs uppercase tracking-wider block">Global Network</span>
