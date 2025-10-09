@@ -85,7 +85,7 @@ export default function JoinMailingList() {
                 <Globe className="w-5 h-5 text-cyan-400 mt-1" />
                 <div>
                   <h3 className="text-white font-semibold">Global Network Access</h3>
-                  <p className="text-gray-500 text-sm">Connect with AI leaders from 45+ countries</p>
+                  <p className="text-gray-500 text-sm">Connect with leading AI researchers worldwide</p>
                 </div>
               </motion.div>
               
@@ -204,8 +204,8 @@ export default function JoinMailingList() {
                 <div className="text-xs text-gray-500 uppercase">Members</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-purple-400">45+</div>
-                <div className="text-xs text-gray-500 uppercase">Countries</div>
+                <div className="text-2xl font-bold text-purple-400">6</div>
+                <div className="text-xs text-gray-500 uppercase">Working Groups</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-green-400">20+</div>

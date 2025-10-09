@@ -233,8 +233,8 @@ const Events = () => {
               </div>
               <div className="p-4 border border-purple-400/20 rounded-lg">
                 <Globe className="w-8 h-8 mx-auto mb-2 text-purple-400" />
-                <div className="text-2xl font-bold text-white">45+</div>
-                <div className="text-xs text-gray-500 uppercase">Cities</div>
+                <div className="text-2xl font-bold text-white">6</div>
+                <div className="text-xs text-gray-500 uppercase">Active Initiatives</div>
               </div>
               <div className="p-4 border border-green-400/20 rounded-lg">
                 <Users className="w-8 h-8 mx-auto mb-2 text-green-400" />
