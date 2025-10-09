@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
   // If deploying to aivisionforum.github.io, no basePath needed
   // If deploying to a subdirectory, uncomment and set:
   // basePath: '/repository-name',
-  devIndicators: {
-    appIsrStatus: false,
-  },
 };
 
 export default nextConfig;

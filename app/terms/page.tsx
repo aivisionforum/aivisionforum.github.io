@@ -75,7 +75,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">6. Disclaimer of Warranties</h2>
               <p className="text-gray-300 mb-4">
-                Our services are provided "as is" without warranties of any kind, either express or implied. We do not guarantee the accuracy, completeness, or usefulness of any information provided.
+                Our services are provided &quot;as is&quot; without warranties of any kind, either express or implied. We do not guarantee the accuracy, completeness, or usefulness of any information provided.
               </p>
             </section>
 

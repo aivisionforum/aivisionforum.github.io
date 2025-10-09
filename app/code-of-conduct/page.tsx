@@ -48,7 +48,7 @@ export default function CodeOfConduct() {
                 <li>The use of sexualized language or imagery, and sexual attention or advances of any kind</li>
                 <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
                 <li>Public or private harassment</li>
-                <li>Publishing others' private information without explicit permission</li>
+                <li>Publishing others&apos; private information without explicit permission</li>
                 <li>Conduct which could reasonably be considered inappropriate in a professional setting</li>
                 <li>Advocating for or encouraging unethical use of AI technologies</li>
               </ul>

@@ -2,11 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Users, ArrowRight, Sparkles, Globe, Zap, Home, ArrowLeft } from 'lucide-react';
+import { Mail, Users, ArrowRight, Sparkles, Globe, Zap, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export default function JoinMailingList() {
-  const [email, setEmail] = useState('');
   const [qrCodeUrl, setQrCodeUrl] = useState('');
 
   useEffect(() => {

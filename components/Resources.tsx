@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, Github, Mail, BookOpen, Video, Download, ExternalLink, Sparkles, ChevronRight, Zap, ArrowRight } from 'lucide-react';
+import { FileText, Github, Mail, Video, Download, ExternalLink, Sparkles, ChevronRight, Zap, ArrowRight } from 'lucide-react';
 
 const Resources = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
