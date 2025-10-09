@@ -41,11 +41,31 @@ jobs:
           npm --version
           ls -la
 
-      - name: Build with Next.js
-        run: npm run build:ci
-        
-      - name: Check output directory
-        run: ls -la out/
+      - name: Remove duplicate config and build
+        run: |
+          echo "Removing any duplicate config files..."
+          rm -f next.config.js
+          echo "Using TypeScript config:"
+          cat next.config.ts
+          echo "Starting build process..."
+          npm run build:ci
+          echo "Build completed. Checking output..."
+          ls -la
+          
+      - name: Verify build output
+        run: |
+          echo "Checking if out directory exists:"
+          if [ -d "out" ]; then
+            echo "✓ out directory exists:"
+            ls -la out/
+          else
+            echo "✗ out directory does not exist"
+            echo "Current directory contents:"
+            ls -la
+            echo "Looking for any build artifacts:"
+            find . -name "*.html" -type f | head -10
+            exit 1
+          fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

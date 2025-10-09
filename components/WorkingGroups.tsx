@@ -28,8 +28,8 @@ const WorkingGroups = () => {
       id: 3,
       title: "AI Maturity",
       icon: Cpu,
-      description: "Developing IEEE P3514 standards for AI capability classification and evaluation.",
-      stats: "IEEE P3514 Standard",
+      description: "Developing standards for AI capability classification and evaluation.",
+      stats: "Industry Guidance",
       color: "blue",
       link: "https://github.com/aivisionforum/ai-maturity"
     },
