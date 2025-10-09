@@ -56,7 +56,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-white mb-4">4. Intellectual Property</h2>
               <p className="text-gray-300 mb-4">
-                Content provided through AI Vision Forum is licensed under various open-source licenses as specified in individual projects. Users retain ownership of their contributions while granting AI Vision Forum a license to use, modify, and distribute such contributions in accordance with the forum's mission.
+                Content provided through AI Vision Forum is licensed under various open-source licenses as specified in individual projects. Users retain ownership of their contributions while granting AI Vision Forum a license to use, modify, and distribute such contributions in accordance with the forum&apos;s mission.
               </p>
             </section>
 
