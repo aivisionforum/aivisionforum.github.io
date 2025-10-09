@@ -186,9 +186,6 @@ export default function JoinMailingList() {
               </div>
               
               <div className="space-y-2">
-                <p className="text-sm text-gray-500">
-                  Perfect for conference presentations
-                </p>
                 <p className="text-xs text-cyan-400 font-mono break-all">
                   aivisionforum.groups.io/g/members/join
                 </p>
