@@ -28,7 +28,7 @@ const WorkingGroups = () => {
       id: 3,
       title: "AI Maturity",
       icon: Cpu,
-      description: "Developing standards for AI capability classification and evaluation.",
+      description: "Developing guidance for AI capability classification and evaluation.",
       stats: "Industry Guidance",
       color: "blue",
       link: "https://github.com/aivisionforum/ai-maturity"
