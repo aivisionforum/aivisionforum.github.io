@@ -143,7 +143,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="mb-8"
+            className="mb-8 mt-4 sm:mt-0"
           >
             <motion.div 
               className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full"
