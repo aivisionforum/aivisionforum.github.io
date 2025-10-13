@@ -229,9 +229,9 @@ const Hero = () => {
               transition={{ duration: 3, repeat: Infinity }}
             />
             <p className="text-lg text-gray-500 max-w-3xl text-executive mb-12">
-              A global consortium of visionary leaders, researchers, and technologists 
-              collaborating to establish governance frameworks, ethical standards, and 
-              strategic initiatives for the responsible advancement of artificial intelligence.
+              Accelerating open-source AI as a public good for the Sustainable Development Goals by uniting researchers,
+              policymakers, international agencies, open-source communities, and industry around evidence-based
+              collaboration and actionable outcomes.
             </p>
           </motion.div>
 

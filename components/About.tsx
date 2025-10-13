@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Target, Eye, Heart, Globe, Sparkles, Award, TrendingUp, Users, Zap } from 'lucide-react';
+import { Target, Eye, Heart, Globe, Sparkles, Award, TrendingUp, Users } from 'lucide-react';
 
 const About = () => {
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
@@ -71,7 +71,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -87,65 +87,41 @@ const About = () => {
             <span className="text-white">STRATEGIC</span>{" "}
             <span className="gradient-text">VISION</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            A global initiative uniting visionary leaders to architect 
-            the future of human-centered artificial intelligence
-          </p>
-        </motion.div>
-
-        {/* Mission Statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <motion.div 
-            className="card-executive p-12 relative overflow-hidden"
-            whileHover={{ scale: 1.01 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-4 text-left text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto mt-10"
           >
-            {/* Animated border gradient */}
-            <motion.div
-              className="absolute inset-0 opacity-20"
-              style={{
-                background: "linear-gradient(45deg, #00d4ff, #7c3aed, #00d4ff)",
-                backgroundSize: "200% 200%",
-              }}
-              animate={{
-                backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-            
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-400/20 rounded-full mb-6"
-              >
-                <Zap className="w-4 h-4 text-purple-400" />
-                <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">Mission Critical</span>
-              </motion.div>
-              
-              <h3 className="text-3xl font-bold text-white mb-6">EXECUTIVE MANDATE</h3>
-              <motion.p 
-                className="text-lg text-gray-300 leading-relaxed"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                The AI Vision Forum serves as a global platform for strategic dialogue on 
-                artificial intelligence development, innovation, and governance. Through high-level 
-                interdisciplinary collaboration, the initiative architects frameworks ensuring human agency, 
-                transparency, and ethical imperatives remain central to AI&apos;s societal integration.
-              </motion.p>
-            </div>
+            <p>
+              The GOSIM AI Strategy Forum is a global dialogue and research platform dedicated to advancing
+              open-source AI as a public good in support of the United Nations Sustainable Development Goals.
+              Its mission is to strengthen international collaboration around open-source AI, foster
+              evidence-based research, and explore how AI can enhance human society.
+            </p>
+            <p>
+              By convening a diverse ecosystem of researchers, policymakers, international agencies, open-source
+              communities (foundations, projects, developers, and users), and industry partners, the Forum
+              creates a trusted space for multi-stakeholder strategy exchange and joint exploration.
+            </p>
+            <p>
+              Our approach emphasizes fact-based and data-driven inquiry, supported by community participation,
+              including developers, users, local communities, and universities. Through open datasets, use-case
+              studies, and research-friendly methodologies, the Forum ensures that its outputs are rigorous,
+              transparent, and actionable.
+            </p>
+            <p>
+              We harness the power of AI-generated content (AIGC) to deliver high-quality, multi-modal, and
+              multi-platform publications, ranging from working group reports and expert interviews to white
+              papers, academic research, and reference architectures. These outputs are distributed widely across
+              multilingual channels such as CSDN, UN platforms, UNICC, foundations, and global social media
+              networks.
+            </p>
+            <p>
+              The Forum also organizes an annual AI Strategy Forum alongside partner events worldwide, providing a
+              flagship venue for strategic dialogue, knowledge sharing, and collaborative action.
+            </p>
           </motion.div>
         </motion.div>
 

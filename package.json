@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack --hostname 127.0.0.1 --port 5001",
     "build": "next build --turbopack",
     "build:ci": "next build",
-    "start": "next start",
+    "start": "next start --hostname 127.0.0.1 --port 5001",
     "lint": "eslint"
   },
   "dependencies": {
