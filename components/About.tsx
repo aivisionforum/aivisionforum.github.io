@@ -95,7 +95,7 @@ const About = () => {
             className="space-y-4 text-left text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto mt-10"
           >
             <p>
-              The GOSIM AI Strategy Forum is a global dialogue and research platform dedicated to advancing
+              The AI Vision Forum is a global dialogue and research platform dedicated to advancing
               open-source AI as a public good in support of the United Nations Sustainable Development Goals.
               Its mission is to strengthen international collaboration around open-source AI, foster
               evidence-based research, and explore how AI can enhance human society.
@@ -119,7 +119,7 @@ const About = () => {
               networks.
             </p>
             <p>
-              The Forum also organizes an annual AI Strategy Forum alongside partner events worldwide, providing a
+              The Forum is organized annually alongside partner events worldwide, providing a
               flagship venue for strategic dialogue, knowledge sharing, and collaborative action.
             </p>
           </motion.div>
