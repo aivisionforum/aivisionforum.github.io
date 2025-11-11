@@ -29,11 +29,11 @@ const Resources = () => {
           type: "PDF"
         },
         {
-          title: "GOSIM AI Vision Forum 2025 Report",
-          subtitle: "Coming Soon",
-          description: "Comprehensive report from the 2025 forum covering AI education, creativity, governance, and digital public goods. Expected release: Q1 2025.",
-          link: "#",
-          type: "Coming Soon"
+          title: "GOSIM Beijing 2025: Global Cooperation for Human-Centered AI",
+          subtitle: "Linux Foundation Report",
+          description: "Comprehensive report covering AI education transformation, creative industries, human-AI interaction, governance frameworks, and digital public goods development.",
+          link: "https://www.linuxfoundation.org/research/gosim-beijing-2025",
+          type: "Web"
         }
       ]
     },
