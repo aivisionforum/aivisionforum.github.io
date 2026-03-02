@@ -49,14 +49,14 @@ const Events = () => {
     },
     {
       id: 4,
-      title: "AI VISION SUMMIT PARIS 2026",
-      subtitle: "Advancing Human-Centric AI Innovation",
-      date: "MAY 2026",
+      title: "AI VISION FORUM PARIS 2026",
+      subtitle: "Architecting Human-AI Synergy",
+      date: "MAY 4, 2026 (MONDAY)",
       location: "Paris, France",
-      attendees: "400+",
-      description: "Annual global summit bringing together leaders to shape AI innovation, foster open collaboration, and advance human-centric artificial intelligence.",
-      link: null,
-      status: "COMING SOON",
+      attendees: "80-100",
+      description: "Intimate one-day forum exploring AI's transformative impact across education, governance, and open source. Join global leaders in shaping the future of human-centric AI.",
+      link: "https://aivisionforum.github.io/ai-vision-forum-paris-2026/",
+      status: "REGISTRATION OPEN",
       upcoming: true,
       featured: true
     }
