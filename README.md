@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Vision Forum
 
-## Getting Started
+**Official website for AI Vision Forum**
 
-First, run the development server:
+Visit: [visionforum.ai](https://visionforum.ai)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+AI Vision Forum is a global initiative convening thought leaders, researchers, policymakers, and open-source community members to address the structural shifts in how humans and AI collaborate.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Our Mission
 
-## Learn More
+To ensure that as AI reshapes human roles, human core values remain central.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Events
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### AI Vision Forum Paris 2026
 
-## Deploy on Vercel
+**Date:** Monday, May 4, 2026  
+**Location:** Versailles Palace TBD, Paris, France  
+**Theme:** Architecting Human-AI Synergy  
+**Website:** [paris2026.visionforum.ai](https://paris2026.visionforum.ai)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Co-located with GOSIM Paris 2026. Invitation-only format with 100-150 participants under Chatham House Rule.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Related Initiatives
+
+- **AOSF (Agentic Open Source Foundation):** [aosf-org.github.io](https://aosf-org.github.io)
+- **CELLO Leaderboard:** [aosf-org.github.io/cello](https://aosf-org.github.io/cello)
+- **GOSIM Paris 2026:** [paris2026.gosim.org](https://paris2026.gosim.org)
+
+---
+
+## Contact
+
+- **GitHub:** [github.com/aivisionforum](https://github.com/aivisionforum)
+- **Twitter:** [@aivisionforum](https://twitter.com/aivisionforum)
+- **LinkedIn:** [AI Vision Forum](https://www.linkedin.com/company/ai-vision-forum)
+
+---
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** TailwindCSS v4
+- **Deployment:** GitHub Pages
+
+---
+
+## License
+
+© 2026 AI Vision Forum. All rights reserved.
