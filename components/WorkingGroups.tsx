@@ -10,8 +10,8 @@ const WorkingGroups = () => {
       id: 1,
       title: "Ethics & Governance",
       icon: Shield,
-      description: "Establishing robust governance frameworks for responsible AI deployment at scale.",
-      stats: "Framework Development",
+      description: "Developing governance principles, accountability models, and policy guidance for responsible AI deployment.",
+      stats: "Policy and governance",
       color: "purple",
       link: "https://github.com/aivisionforum/ai-ethics-governance"
     },
@@ -19,8 +19,8 @@ const WorkingGroups = () => {
       id: 2,
       title: "Global Digital Infrastructure",
       icon: Globe2,
-      description: "Building AI as a global digital public good through distributed infrastructure.",
-      stats: "Open Source Initiative",
+      description: "Exploring how open infrastructure can support AI as a global digital public good across regions and institutions.",
+      stats: "Public-interest infrastructure",
       color: "green",
       link: "https://github.com/aivisionforum/ai-global-digital-public-good"
     },
@@ -28,8 +28,8 @@ const WorkingGroups = () => {
       id: 3,
       title: "AI Maturity",
       icon: Cpu,
-      description: "Developing guidance for AI capability classification and evaluation.",
-      stats: "Industry Guidance",
+      description: "Creating frameworks for capability classification, evaluation, and readiness across sectors.",
+      stats: "Evaluation and standards",
       color: "blue",
       link: "https://github.com/aivisionforum/ai-maturity"
     },
@@ -37,8 +37,8 @@ const WorkingGroups = () => {
       id: 4,
       title: "AI & Education",
       icon: BookOpen,
-      description: "Revolutionizing learning paradigms through AI-enhanced pedagogical frameworks and adaptive systems.",
-      stats: "Research Initiative",
+      description: "Examining how AI can strengthen learning, pedagogy, and public understanding without flattening human judgment.",
+      stats: "Learning and pedagogy",
       color: "cyan",
       link: null
     },
@@ -46,8 +46,8 @@ const WorkingGroups = () => {
       id: 5,
       title: "Human-AI Synergy",
       icon: Brain,
-      description: "Pioneering frameworks for augmented intelligence and human-machine collaboration.",
-      stats: "Collaborative Research",
+      description: "Studying how human expertise and AI systems can work together in ways that preserve agency and trust.",
+      stats: "Human-centered design",
       color: "orange",
       link: null
     },
@@ -55,8 +55,8 @@ const WorkingGroups = () => {
       id: 6,
       title: "Creative Intelligence",
       icon: Users,
-      description: "Exploring the intersection of artificial and human creativity in digital realms.",
-      stats: "Exploratory Phase",
+      description: "Bringing cultural inquiry, creativity, and applied experimentation into the conversation on AI futures.",
+      stats: "Culture and practice",
       color: "pink",
       link: null
     }
@@ -75,14 +75,39 @@ const WorkingGroups = () => {
   };
 
   return (
-    <section id="working-groups" className="section bg-black relative">
-      {/* Background effects */}
+    <section id="working-groups" className="section relative overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 grid-futuristic opacity-20" />
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <filter id="wg-impressionist" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.015 0.011" numOctaves="4" seed="33" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="95" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+              <feGaussianBlur in="displaced" stdDeviation="24" result="soft" />
+              <feColorMatrix in="soft" type="saturate" values="1.25" />
+            </filter>
+            <filter id="wg-dappled" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.024 0.02" numOctaves="3" seed="27" result="lightNoise" />
+              <feGaussianBlur in="lightNoise" stdDeviation="14" result="softLight" />
+              <feColorMatrix in="softLight" type="luminanceToAlpha" result="lightMap" />
+              <feComponentTransfer in="lightMap">
+                <feFuncA type="linear" slope="0.25" intercept="0.03" />
+              </feComponentTransfer>
+            </filter>
+          </defs>
+          <rect width="100%" height="100%" fill="#faf6ef" />
+          <g filter="url(#wg-impressionist)">
+            <ellipse cx="70%" cy="15%" rx="320" ry="240" fill="rgba(200, 150, 155, 0.34)" />
+            <ellipse cx="20%" cy="30%" rx="280" ry="210" fill="rgba(145, 180, 210, 0.3)" />
+            <ellipse cx="85%" cy="55%" rx="260" ry="190" fill="rgba(165, 195, 150, 0.28)" />
+            <ellipse cx="40%" cy="75%" rx="300" ry="200" fill="rgba(220, 195, 150, 0.26)" />
+            <ellipse cx="55%" cy="40%" rx="200" ry="160" fill="rgba(190, 165, 205, 0.2)" />
+            <ellipse cx="10%" cy="70%" rx="240" ry="180" fill="rgba(210, 175, 145, 0.22)" />
+          </g>
+          <rect width="100%" height="100%" fill="rgba(255, 252, 244, 0.45)" filter="url(#wg-dappled)" />
+        </svg>
       </div>
 
       <div className="container relative">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,19 +121,18 @@ const WorkingGroups = () => {
             className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full mb-8"
           >
             <Network className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Strategic Initiatives</span>
+            <span className="text-sm font-medium text-gray-300 uppercase section-label">Forum Themes</span>
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">WORKING</span>{" "}
-            <span className="gradient-text">GROUPS</span>
+            <span className="text-white">Forum</span>{" "}
+            <span className="gradient-text">Themes</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Six specialized themes driving innovation across critical AI domains
+            Six conversation tracks linking humanities, governance, engineering, education, and applied AI practice.
           </p>
         </motion.div>
 
-        {/* Working Groups Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {groups.map((group, index) => {
             const colors = getColorClasses(group.color);
@@ -123,10 +147,8 @@ const WorkingGroups = () => {
                 className="group"
               >
                 <div className="card-executive h-full p-6 flex flex-col relative overflow-hidden">
-                  {/* Subtle hover overlay - behind content with 30% opacity */}
                   <div className={`absolute inset-0 ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none`} />
                   
-                  {/* Status indicator */}
                   <div className="flex justify-between items-start mb-4 relative z-10">
                     <div className={`p-3 rounded-lg ${colors.border} border bg-black/50 backdrop-blur-sm`}>
                       <group.icon className={`w-6 h-6 ${colors.text}`} />
@@ -138,18 +160,15 @@ const WorkingGroups = () => {
                     </div>
                   </div>
                   
-                  {/* Content with z-10 layering */}
                   <h3 className="text-xl font-bold text-white mb-2 relative z-10">{group.title}</h3>
                   <p className="text-gray-400 text-sm mb-4 flex-grow leading-relaxed relative z-10 group-hover:text-gray-300 transition-colors">
                     {group.description}
                   </p>
                   
-                  {/* Stats */}
                   <div className={`text-xs ${colors.text} font-bold mb-4 uppercase tracking-wider relative z-10`}>
                     {group.stats}
                   </div>
                   
-                  {/* Link with better visibility */}
                   <div className="relative z-10">
                     {group.link ? (
                       <motion.a
@@ -160,11 +179,11 @@ const WorkingGroups = () => {
                         whileHover={{ x: 5 }}
                       >
                         <Database className="w-4 h-4 mr-2" />
-                        Access Repository
+                        View Working Repository
                         <ArrowRight className="ml-1 w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                       </motion.a>
                     ) : (
-                      <span className="text-sm text-gray-600 italic">Deployment Pending</span>
+                      <span className="text-sm text-gray-600 italic">Program curation in progress</span>
                     )}
                   </div>
                 </div>
@@ -173,7 +192,6 @@ const WorkingGroups = () => {
           })}
         </div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -181,9 +199,9 @@ const WorkingGroups = () => {
           className="text-center mt-20"
         >
           <div className="inline-block p-8 glass-dark rounded-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">JOIN THE INITIATIVE</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Join the Forum Circle</h3>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-              Contribute to the advancement of ethical AI through collaborative research and development
+              Contribute research, field experience, or implementation insight to the themes shaping the Paris forum.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.a
@@ -195,7 +213,7 @@ const WorkingGroups = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Cpu className="w-4 h-4 mr-2" />
-                ACCESS NETWORKS
+                Join Mailing Lists
               </motion.a>
               <motion.a
                 href="https://github.com/aivisionforum"
@@ -205,7 +223,7 @@ const WorkingGroups = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                CONTRIBUTE CODE
+                Browse Open Projects
               </motion.a>
             </div>
           </div>

@@ -10,10 +10,10 @@ const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
 
   const rotatingTexts = [
-    "Architecting the Future of Human-AI Synergy",
-    "Building Ethical AI Governance Frameworks",
-    "Pioneering Open Source AI Innovation",
-    "Shaping Tomorrow's Intelligence Landscape"
+    "Where humanistic research meets AI strategy",
+    "A Paris forum for responsible AI in practice",
+    "Open collaboration across governance, culture, and technology",
+    "Connecting researchers, strategists, and practitioners"
   ];
 
   useEffect(() => {
@@ -33,112 +33,131 @@ const Hero = () => {
   }, [rotatingTexts.length]);
 
   const stats = [
-    { value: "20+", label: "Global Partners", icon: Globe },
-    { value: "6", label: "Strategic Initiatives", icon: TrendingUp },
-    { value: "100%", label: "Open Source Commitment", icon: Code }
+    { value: "20+", label: "Partner Institutions", icon: Globe },
+    { value: "6", label: "Forum Themes", icon: TrendingUp },
+    { value: "100%", label: "Open Collaboration", icon: Code }
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center section relative overflow-hidden bg-black">
-      {/* Subtle Space Effects */}
+    <section id="home" className="hero-section flex items-center justify-center section relative overflow-hidden">
+      {/* Impressionist SVG background */}
       <div className="absolute inset-0" style={{ zIndex: 0 }}>
-        <div className="space-overlay" />
-        <div className="subtle-stars" />
-        {/* Subtle Meteors */}
-        {mounted && (
-          <>
-            <div className="subtle-meteor" style={{ top: '-10%', left: '-10%', animationDelay: '0s', animationDuration: '15s' }} />
-            <div className="subtle-meteor" style={{ top: '-15%', left: '20%', animationDelay: '5s', animationDuration: '18s' }} />
-            <div className="subtle-meteor" style={{ top: '5%', left: '-15%', animationDelay: '10s', animationDuration: '20s' }} />
-          </>
-        )}
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            {/* Painterly turbulence filter */}
+            <filter id="impressionist" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.008" numOctaves="4" seed="3" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="120" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+              <feGaussianBlur in="displaced" stdDeviation="28" result="soft" />
+              <feColorMatrix in="soft" type="saturate" values="1.3" result="vivid" />
+            </filter>
+            {/* Dappled light filter */}
+            <filter id="dappled" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.025 0.02" numOctaves="3" seed="7" result="lightNoise" />
+              <feGaussianBlur in="lightNoise" stdDeviation="18" result="softLight" />
+              <feColorMatrix in="softLight" type="luminanceToAlpha" result="lightMap" />
+              <feComponentTransfer in="lightMap" result="lightMask">
+                <feFuncA type="linear" slope="0.35" intercept="0.05" />
+              </feComponentTransfer>
+            </filter>
+            {/* Brushstroke texture */}
+            <filter id="brushstroke" x="0%" y="0%" width="100%" height="100%">
+              <feTurbulence type="turbulence" baseFrequency="0.04 0.008" numOctaves="2" seed="12" result="strokes" />
+              <feGaussianBlur in="strokes" stdDeviation="3" result="softStrokes" />
+              <feColorMatrix in="softStrokes" type="luminanceToAlpha" result="strokeAlpha" />
+              <feComponentTransfer in="strokeAlpha" result="strokeMask">
+                <feFuncA type="linear" slope="0.08" intercept="0" />
+              </feComponentTransfer>
+            </filter>
+          </defs>
+
+          {/* Base warm canvas */}
+          <rect width="100%" height="100%" fill="#faf5ee" />
+
+          {/* Impressionist color washes — soft blobs like brushstrokes of light */}
+          <g filter="url(#impressionist)">
+            {/* Rose / peach — upper left, like morning light */}
+            <ellipse cx="18%" cy="22%" rx="320" ry="260" fill="rgba(215, 148, 148, 0.45)" />
+            <ellipse cx="12%" cy="35%" rx="200" ry="180" fill="rgba(232, 180, 165, 0.35)" />
+            {/* Lavender / blue — upper right, like sky reflection */}
+            <ellipse cx="78%" cy="18%" rx="360" ry="280" fill="rgba(140, 170, 205, 0.4)" />
+            <ellipse cx="85%" cy="30%" rx="220" ry="200" fill="rgba(165, 185, 215, 0.3)" />
+            {/* Sage green — lower center, like garden foliage */}
+            <ellipse cx="50%" cy="78%" rx="380" ry="240" fill="rgba(155, 185, 140, 0.35)" />
+            <ellipse cx="40%" cy="85%" rx="200" ry="160" fill="rgba(175, 200, 155, 0.25)" />
+            {/* Golden ochre — center, like sunlight on stone */}
+            <ellipse cx="55%" cy="45%" rx="300" ry="220" fill="rgba(220, 190, 140, 0.3)" />
+            <ellipse cx="35%" cy="55%" rx="260" ry="200" fill="rgba(235, 205, 160, 0.22)" />
+            {/* Cool violet accent — scattered */}
+            <ellipse cx="68%" cy="60%" rx="180" ry="150" fill="rgba(180, 155, 195, 0.2)" />
+            <ellipse cx="25%" cy="70%" rx="160" ry="140" fill="rgba(190, 165, 200, 0.18)" />
+          </g>
+
+          {/* Dappled light overlay — like sunlight through leaves */}
+          <rect width="100%" height="100%" fill="rgba(255, 252, 240, 0.6)" filter="url(#dappled)" />
+
+          {/* Subtle brushstroke texture overlay */}
+          <rect width="100%" height="100%" fill="rgba(120, 100, 80, 0.5)" filter="url(#brushstroke)" />
+        </svg>
+
+        {/* Soft vignette to keep text area clear */}
+        <div className="absolute inset-0" style={{
+          background: "radial-gradient(ellipse 70% 60% at 50% 45%, rgba(253, 250, 243, 0.5) 0%, transparent 70%)",
+        }} />
       </div>
-      
-      {/* Animated Background Layers */}
-      <div className="absolute inset-0" style={{ zIndex: 1 }}>
-        {/* Data visualization overlay */}
-        <div className="absolute inset-0 data-grid opacity-20" />
-        
-        {/* Animated gradient orbs */}
-        {mounted && (
-          <>
-            <motion.div
-              className="absolute top-20 left-10 w-72 h-72 rounded-full"
-              style={{
-                background: "radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%)",
-                filter: "blur(40px)",
-              }}
-              animate={{
-                x: [0, 100, 0],
-                y: [0, -50, 0],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 15,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            <motion.div
-              className="absolute bottom-20 right-10 w-96 h-96 rounded-full"
-              style={{
-                background: "radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%)",
-                filter: "blur(60px)",
-              }}
-              animate={{
-                x: [0, -100, 0],
-                y: [0, 50, 0],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            {/* Particle field */}
-            {[...Array(10)].map((_, i) => (
+
+      {/* Floating light motes — like dust in afternoon sun */}
+      {mounted && (
+        <div className="absolute inset-0" style={{ zIndex: 1 }}>
+          {[...Array(8)].map((_, i) => {
+            const colors = [
+              'rgba(215, 165, 130, 0.5)',
+              'rgba(140, 175, 210, 0.45)',
+              'rgba(165, 190, 145, 0.4)',
+              'rgba(210, 150, 155, 0.45)',
+              'rgba(200, 185, 140, 0.4)',
+              'rgba(175, 155, 195, 0.35)',
+              'rgba(225, 195, 155, 0.45)',
+              'rgba(150, 180, 200, 0.4)',
+            ];
+            const sizes = [60, 80, 50, 70, 55, 65, 75, 45];
+            return (
               <motion.div
                 key={i}
                 className="absolute rounded-full"
                 style={{
-                  width: '0.5px',
-                  height: '0.5px',
-                  backgroundColor: 'rgba(0, 212, 255, 0.6)',
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
+                  width: sizes[i],
+                  height: sizes[i],
+                  background: `radial-gradient(circle, ${colors[i]} 0%, transparent 70%)`,
+                  filter: 'blur(20px)',
+                  left: `${10 + (i * 12) % 80}%`,
+                  top: `${15 + (i * 17) % 65}%`,
                 }}
                 animate={{
-                  y: [-10, 10, -10],
-                  x: [-5, 5, -5],
-                  opacity: [0.3, 0.6, 0.3],
+                  x: [0, 30 * (i % 2 === 0 ? 1 : -1), 0],
+                  y: [0, 20 * (i % 3 === 0 ? -1 : 1), 0],
+                  opacity: [0.4, 0.7, 0.4],
+                  scale: [1, 1.15, 1],
                 }}
                 transition={{
-                  duration: 5 + Math.random() * 5,
+                  duration: 8 + i * 2,
                   repeat: Infinity,
-                  delay: Math.random() * 2,
                   ease: "easeInOut",
+                  delay: i * 0.8,
                 }}
               />
-            ))}
-          </>
-        )}
-        
-        {/* Strategic gradient overlay */}
-        <div className="absolute inset-0 gradient-vision" />
-      </div>
-
-      {/* Matrix effect (subtle) */}
-      <div className="matrix-bg" />
+            );
+          })}
+        </div>
+      )}
 
       <div className="container relative">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="max-w-6xl mx-auto"
+          className="max-w-6xl mx-auto text-center"
         >
-          {/* Executive Badge with animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -149,9 +168,9 @@ const Hero = () => {
               className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full"
               animate={{
                 boxShadow: [
-                  "0 0 20px rgba(0, 212, 255, 0.3)",
-                  "0 0 40px rgba(0, 212, 255, 0.5)",
-                  "0 0 20px rgba(0, 212, 255, 0.3)",
+                  "0 8px 24px rgba(93, 132, 168, 0.16)",
+                  "0 16px 36px rgba(202, 124, 129, 0.18)",
+                  "0 8px 24px rgba(93, 132, 168, 0.16)",
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
@@ -161,23 +180,22 @@ const Hero = () => {
                 <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" style={{ animationDelay: '0.2s' }} />
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" style={{ animationDelay: '0.4s' }} />
               </div>
-              <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Strategic Vision 2025-2030</span>
+              <span className="text-sm font-medium text-gray-300 uppercase tracking-[0.22em]">Paris in May • AI Strategy Forum</span>
             </motion.div>
           </motion.div>
 
-          {/* Animated Main Title */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
             <motion.h1 
-              className="text-7xl md:text-8xl lg:text-9xl font-bold mb-6 leading-none"
+              className="text-6xl md:text-7xl lg:text-[8.25rem] font-bold mb-6 leading-none"
               animate={{
                 textShadow: [
-                  "0 0 20px rgba(0, 212, 255, 0.5)",
-                  "0 0 40px rgba(0, 212, 255, 0.8)",
-                  "0 0 20px rgba(0, 212, 255, 0.5)",
+                  "0 10px 22px rgba(93, 132, 168, 0.1)",
+                  "0 18px 36px rgba(202, 124, 129, 0.12)",
+                  "0 10px 22px rgba(93, 132, 168, 0.1)",
                 ],
               }}
               transition={{ duration: 4, repeat: Infinity }}
@@ -201,7 +219,6 @@ const Hero = () => {
             </motion.h1>
           </motion.div>
 
-          {/* Rotating Tagline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -215,27 +232,25 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="text-2xl md:text-3xl text-gray-400 font-light mb-4"
+                className="text-2xl md:text-3xl text-gray-400 font-light mb-4 max-w-4xl mx-auto"
               >
                 {rotatingTexts[textIndex]}
               </motion.p>
             </AnimatePresence>
             <motion.div 
-              className="glow-line w-32 mx-0 mb-6"
+              className="glow-line w-32 mx-auto mb-6"
               animate={{
                 width: ["32px", "128px", "32px"],
                 opacity: [0.5, 1, 0.5],
               }}
               transition={{ duration: 3, repeat: Infinity }}
             />
-            <p className="text-lg text-gray-500 max-w-3xl text-executive mb-12">
-              Accelerating open-source AI as a public good for the Sustainable Development Goals by uniting researchers,
-              policymakers, international agencies, open-source communities, and industry around evidence-based
-              collaboration and actionable outcomes.
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto text-executive mb-12">
+              A spring gathering in Paris for humanistic researchers, AI strategists, policymakers, and practitioners
+              to shape responsible innovation through open collaboration, thoughtful governance, and practical action.
             </p>
           </motion.div>
 
-          {/* Enhanced Live Stats Display */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -275,12 +290,11 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Enhanced CTAs with animation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className="flex flex-col sm:flex-row gap-4 items-start"
+            className="flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
             <motion.a
               href="#working-groups"
@@ -290,7 +304,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Zap className="w-4 h-4 mr-2" />
-              Access Strategic Initiatives
+              Explore Forum Themes
               <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
             </motion.a>
             <motion.a
@@ -302,11 +316,10 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              View Technical Framework
+              View Open Projects
             </motion.a>
           </motion.div>
 
-          {/* Animated Bottom Stats Bar */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -319,29 +332,28 @@ const Hero = () => {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="min-w-[140px]"
               >
-                <span className="text-gray-600 text-xs uppercase tracking-wider block">Status</span>
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Current Focus</span>
                 <div className="flex items-center gap-2 mt-1">
                   <Activity className="w-4 h-4 text-green-400" />
-                  <span className="text-green-400 text-sm font-bold">OPERATIONAL</span>
+                  <span className="text-green-400 text-sm font-bold">PARIS CURATION</span>
                 </div>
               </motion.div>
               <div className="min-w-[140px]">
-                <span className="text-gray-600 text-xs uppercase tracking-wider block">Next Summit</span>
-                <div className="text-white text-sm mt-1 font-semibold">Paris 2026</div>
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Forum Edition</span>
+                <div className="text-white text-sm mt-1 font-semibold">Paris • May 2026</div>
               </div>
               <div className="min-w-[140px]">
-                <span className="text-gray-600 text-xs uppercase tracking-wider block">Active Projects</span>
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Conversation Tracks</span>
                 <motion.div 
                   className="text-cyan-400 text-sm mt-1 font-bold"
                   animate={{ opacity: [0.5, 1, 0.5] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  27 Initiatives
+                  Research • Policy • Practice
                 </motion.div>
               </div>
-              {/* Live collaboration counter */}
               <div className="min-w-[140px]">
-                <span className="text-gray-600 text-xs uppercase tracking-wider block">Global Network</span>
+                <span className="text-gray-600 text-xs uppercase tracking-wider block">Community Pulse</span>
                 <div className="flex items-center gap-2 mt-1">
                   <Users className="w-4 h-4 text-cyan-400" />
                   <span className="text-white text-sm font-bold">
@@ -355,7 +367,7 @@ const Hero = () => {
                       </motion.span>
                     )}
                   </span>
-                  <span className="text-gray-600 text-xs ml-1">ACTIVE</span>
+                  <span className="text-gray-600 text-xs ml-1">IN DIALOGUE</span>
                 </div>
               </div>
             </div>

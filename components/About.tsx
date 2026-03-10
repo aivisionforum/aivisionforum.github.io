@@ -42,31 +42,46 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section bg-gradient-to-b from-gray-950 via-black to-gray-950 relative overflow-hidden">
-      {/* Background effects */}
+    <section id="about" className="section relative overflow-hidden">
+      {/* Impressionist background */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 grid-futuristic opacity-5" />
-        <motion.div
-          className="absolute bottom-0 right-0 w-96 h-96 rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%)",
-            filter: "blur(80px)",
-          }}
-          animate={{
-            x: [0, -50, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <filter id="about-impressionist" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.014 0.01" numOctaves="4" seed="8" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+              <feGaussianBlur in="displaced" stdDeviation="26" result="soft" />
+              <feColorMatrix in="soft" type="saturate" values="1.2" />
+            </filter>
+            <filter id="about-dappled" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.022 0.018" numOctaves="3" seed="14" result="lightNoise" />
+              <feGaussianBlur in="lightNoise" stdDeviation="16" result="softLight" />
+              <feColorMatrix in="softLight" type="luminanceToAlpha" result="lightMap" />
+              <feComponentTransfer in="lightMap">
+                <feFuncA type="linear" slope="0.3" intercept="0.04" />
+              </feComponentTransfer>
+            </filter>
+          </defs>
+          <rect width="100%" height="100%" fill="#faf5ee" />
+          <g filter="url(#about-impressionist)">
+            {/* Rose and peach — warmth */}
+            <ellipse cx="20%" cy="15%" rx="300" ry="220" fill="rgba(220, 155, 150, 0.38)" />
+            <ellipse cx="75%" cy="25%" rx="280" ry="200" fill="rgba(225, 185, 165, 0.3)" />
+            {/* Lavender blue — coolness */}
+            <ellipse cx="85%" cy="50%" rx="320" ry="260" fill="rgba(145, 175, 210, 0.32)" />
+            <ellipse cx="10%" cy="60%" rx="260" ry="200" fill="rgba(170, 190, 220, 0.25)" />
+            {/* Sage green */}
+            <ellipse cx="55%" cy="80%" rx="350" ry="220" fill="rgba(160, 190, 145, 0.3)" />
+            {/* Golden light */}
+            <ellipse cx="45%" cy="40%" rx="280" ry="200" fill="rgba(225, 200, 150, 0.26)" />
+            {/* Violet accent */}
+            <ellipse cx="65%" cy="65%" rx="200" ry="160" fill="rgba(185, 160, 200, 0.2)" />
+          </g>
+          <rect width="100%" height="100%" fill="rgba(255, 252, 242, 0.5)" filter="url(#about-dappled)" />
+        </svg>
       </div>
       
       <div className="container relative">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,12 +95,12 @@ const About = () => {
             className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full mb-8"
           >
             <Award className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Global Consortium</span>
+            <span className="text-sm font-medium text-gray-300 uppercase section-label">Human-Centered Alliance</span>
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">STRATEGIC</span>{" "}
-            <span className="gradient-text">VISION</span>
+            <span className="text-white">Why This</span>{" "}
+            <span className="gradient-text">Forum</span>
           </h2>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +140,6 @@ const About = () => {
           </motion.div>
         </motion.div>
 
-        {/* Core Values */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -138,7 +152,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Strategic Pillars
+            Shared Commitments
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
@@ -166,7 +180,6 @@ const About = () => {
                   <h4 className="text-lg font-bold text-white mb-2">{value.title}</h4>
                   <p className="text-sm text-gray-500">{value.description}</p>
                   
-                  {/* Status indicator */}
                   <AnimatePresence>
                     {hoveredValue === index && (
                       <motion.div
@@ -188,7 +201,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Key Insights */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -201,7 +213,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Strategic Intelligence
+            Forum Insights
           </motion.h3>
           
           <div className="glass-dark rounded-2xl p-8">
@@ -270,7 +282,6 @@ const About = () => {
               </div>
             </div>
             
-            {/* Stats Bar */}
             <motion.div 
               className="mt-8 pt-8 border-t border-gray-800 flex justify-around"
               initial={{ opacity: 0 }}
@@ -321,7 +332,6 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Partners */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -333,7 +343,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Strategic Alliance
+            Partners & Hosts
           </motion.h3>
           <div className="flex flex-wrap justify-center gap-4">
             {partners.map((partner, index) => (
