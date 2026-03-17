@@ -55,7 +55,7 @@ const Events = () => {
       location: "Paris, France",
       attendees: "80-100",
       description: "Intimate one-day forum exploring AI's transformative impact across education, governance, and open source. Join global leaders in shaping the future of human-centric AI.",
-      link: "https://aivisionforum.github.io/ai-vision-forum-paris-2026/",
+      link: "https://paris2026.visionforum.ai/",
       status: "REGISTRATION OPEN",
       upcoming: true,
       featured: true
