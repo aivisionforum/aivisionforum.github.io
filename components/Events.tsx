@@ -29,7 +29,7 @@ const Events = () => {
       location: "Hangzhou, China",
       attendees: "300+",
       description: "Convergence of global AI leaders, researchers, and policymakers from 20+ nations.",
-      link: "https://hangzhou2025-aivision-forum.gosim.org/en/",
+      link: "https://hangzhou2025.visionforum.ai/",
       status: "COMPLETED",
       upcoming: false,
       featured: false
