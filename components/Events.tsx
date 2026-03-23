@@ -12,11 +12,11 @@ const Events = () => {
       id: 1,
       title: "AI VISION SUMMIT PARIS",
       subtitle: "Open Source AI Strategy Forum",
-      date: "MAY 2024",
+      date: "MAY 2025",
       location: "Paris, France",
       attendees: "200+",
       description: "Strategic discussions on collaborative frameworks for next-generation AI development.",
-      link: "https://paris2024.gosim.org/os-ai-strategy-forum/",
+      link: "https://paris2025.gosim.org/os-ai-strategy-forum/",
       status: "COMPLETED",
       upcoming: false,
       featured: false
