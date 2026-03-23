@@ -25,11 +25,11 @@ const Events = () => {
       id: 2,
       title: "GLOBAL AI COOPERATION SUMMIT",
       subtitle: "Annual Forum Hangzhou",
-      date: "SEPTEMBER 2024",
+      date: "SEPTEMBER 2025",
       location: "Hangzhou, China",
       attendees: "300+",
       description: "Convergence of global AI leaders, researchers, and policymakers from 20+ nations.",
-      link: "https://forum.gosim.org",
+      link: "https://hangzhou2025-aivision-forum.gosim.org/en/",
       status: "COMPLETED",
       upcoming: false,
       featured: false
