@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Github, Mail, Video, Download, ExternalLink, Sparkles, ChevronRight, Zap, ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 
 const Resources = () => {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
@@ -16,9 +15,16 @@ const Resources = () => {
       icon: FileText,
       items: [
         {
+          title: "AI Vision Forum Paris 2026 — Forum Report",
+          subtitle: "Architecting Human–AI Synergy · panel infographics + audio/video recap",
+          description: "Executive summary, seven headline findings, four panel writeups (each with its own summary and recommendations infographics), and the closing Paris Initiative on Open Token.",
+          link: "https://paris2026.visionforum.ai/report/",
+          type: "Web · PDF · Audio · Video"
+        },
+        {
           title: "GOSIM AI Strategy Forum 2025 Paris",
           subtitle: "Linux Foundation Report",
-          description: "A detailed forum report on governance, innovation, and international cooperation emerging from the Paris summit.",
+          description: "Comprehensive report on global AI strategy from the Paris summit, covering governance, innovation, and cooperation.",
           link: "https://www.linuxfoundation.org/research/GOSIM-2025?hsLang=en",
           type: "Web"
         },
@@ -30,11 +36,11 @@ const Resources = () => {
           type: "PDF"
         },
         {
-          title: "GOSIM Beijing 2025: Global Cooperation for Human-Centered AI",
-          subtitle: "Linux Foundation Report",
-          description: "Comprehensive report covering AI education transformation, creative industries, human-AI interaction, governance frameworks, and digital public goods development.",
-          link: "https://www.linuxfoundation.org/research/gosim-beijing-2025",
-          type: "Web"
+          title: "Global Cooperation for Human-Centered AI",
+          subtitle: "GOSIM AI Vision Forum 2025 Report",
+          description: "Key insights from the forum covering AI education, creativity, governance, and digital public goods.",
+          link: "#",
+          type: "PDF"
         }
       ]
     },
@@ -84,11 +90,11 @@ const Resources = () => {
           type: "Mailing List"
         },
         {
-          title: "AI Maturity",
-          subtitle: "IEEE P3514 Working Group",
-          description: "Join the AI Maturity working group developing IEEE P3514 standards for AI capability classification.",
-          link: "https://aivisionforum.groups.io/g/ai-maturity",
-          type: "Mailing List"
+          title: "GOSIM Community",
+          subtitle: "Open source AI ecosystem",
+          description: "Join the broader GOSIM community working on open source AI solutions.",
+          link: "https://gosim.org",
+          type: "Web"
         }
       ]
     }
@@ -111,45 +117,36 @@ const Resources = () => {
         return <Mail className="w-4 h-4" />;
       case 'Video':
         return <Video className="w-4 h-4" />;
-      case 'Coming Soon':
-        return <Sparkles className="w-4 h-4" />;
       default:
         return <ExternalLink className="w-4 h-4" />;
     }
   };
 
   return (
-    <section id="resources" className="section relative overflow-hidden">
+    <section id="resources" className="section bg-black relative overflow-hidden">
+      {/* Background effects */}
       <div className="absolute inset-0 -z-10">
-        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <defs>
-            <filter id="res-impressionist" x="-20%" y="-20%" width="140%" height="140%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.009" numOctaves="4" seed="42" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="105" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-              <feGaussianBlur in="displaced" stdDeviation="28" result="soft" />
-              <feColorMatrix in="soft" type="saturate" values="1.2" />
-            </filter>
-            <filter id="res-dappled" x="-10%" y="-10%" width="120%" height="120%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.021 0.017" numOctaves="3" seed="35" result="lightNoise" />
-              <feGaussianBlur in="lightNoise" stdDeviation="16" result="softLight" />
-              <feColorMatrix in="softLight" type="luminanceToAlpha" result="lightMap" />
-              <feComponentTransfer in="lightMap">
-                <feFuncA type="linear" slope="0.26" intercept="0.04" />
-              </feComponentTransfer>
-            </filter>
-          </defs>
-          <rect width="100%" height="100%" fill="#f9f5ed" />
-          <g filter="url(#res-impressionist)">
-            <ellipse cx="30%" cy="20%" rx="300" ry="220" fill="rgba(155, 185, 215, 0.35)" />
-            <ellipse cx="75%" cy="35%" rx="280" ry="200" fill="rgba(215, 155, 150, 0.3)" />
-            <ellipse cx="15%" cy="65%" rx="260" ry="190" fill="rgba(175, 200, 155, 0.28)" />
-            <ellipse cx="60%" cy="75%" rx="320" ry="210" fill="rgba(210, 190, 145, 0.25)" />
-            <ellipse cx="45%" cy="45%" rx="200" ry="170" fill="rgba(185, 160, 200, 0.2)" />
-          </g>
-          <rect width="100%" height="100%" fill="rgba(255, 252, 243, 0.48)" filter="url(#res-dappled)" />
-        </svg>
+        <div className="absolute inset-0 grid-futuristic opacity-10" />
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%)",
+            filter: "blur(60px)",
+          }}
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
       </div>
       <div className="container relative">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,18 +160,20 @@ const Resources = () => {
             className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full mb-8"
           >
             <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-sm font-medium text-gray-300 uppercase section-label">Reading Room</span>
+            <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Knowledge Hub</span>
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Reports,</span>{" "}
-            <span className="gradient-text">Notes & Projects</span>
+            <span className="text-white">STRATEGIC</span>{" "}
+            <span className="gradient-text">RESOURCES</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Reading and working material for a forum that brings cultural inquiry, governance thinking, and applied AI together.
+            Access comprehensive documentation, research papers, and collaborative tools 
+            driving the future of ethical artificial intelligence
           </p>
         </motion.div>
 
+        {/* Resource Categories */}
         <div className="space-y-16">
           {resourceCategories.map((category, categoryIndex) => (
             <motion.div
@@ -184,6 +183,7 @@ const Resources = () => {
               viewport={{ once: true }}
               transition={{ delay: categoryIndex * 0.1 }}
             >
+              {/* Category Header */}
               <motion.div 
                 className="flex items-center mb-8 cursor-pointer"
                 onClick={() => setActiveCategory(categoryIndex)}
@@ -197,9 +197,9 @@ const Resources = () => {
                   }`}
                   animate={activeCategory === categoryIndex ? {
                     boxShadow: [
-                      "0 12px 24px rgba(93, 132, 168, 0.12)",
-                      "0 18px 34px rgba(202, 124, 129, 0.16)",
-                      "0 12px 24px rgba(93, 132, 168, 0.12)",
+                      "0 0 20px rgba(0, 212, 255, 0.3)",
+                      "0 0 40px rgba(0, 212, 255, 0.5)",
+                      "0 0 20px rgba(0, 212, 255, 0.3)",
                     ],
                   } : {}}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -214,6 +214,7 @@ const Resources = () => {
                 }`} />
               </motion.div>
 
+              {/* Category Items Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {category.items.map((item, itemIndex) => (
                   <motion.div
@@ -236,6 +237,7 @@ const Resources = () => {
                         className="h-full card-executive p-6 relative overflow-hidden"
                         whileHover={{ scale: 1.02 }}
                       >
+                        {/* Hover glow effect */}
                         <AnimatePresence>
                           {hoveredCard === `${categoryIndex}-${itemIndex}` && (
                             <motion.div
@@ -264,6 +266,7 @@ const Resources = () => {
                         <p className="text-sm text-cyan-400 mb-2 font-medium">{item.subtitle}</p>
                         <p className="text-sm text-gray-500">{item.description}</p>
                         
+                        {/* Link indicator */}
                         {item.link !== '#' && (
                           <motion.div 
                             className="absolute bottom-4 right-4"
@@ -284,6 +287,7 @@ const Resources = () => {
           ))}
         </div>
 
+        {/* Strategic CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -302,9 +306,10 @@ const Resources = () => {
                 <span className="text-xs font-bold text-green-400 uppercase tracking-wider">Stay Connected</span>
               </motion.div>
               
-              <h3 className="text-2xl font-bold text-white mb-4">Receive Forum Updates</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">ACCESS STRATEGIC UPDATES</h3>
               <p className="text-gray-400 mb-6">
-                Join the mailing list for event notes, research updates, working group progress, and Paris forum announcements.
+                Join the network for exclusive insights on AI governance frameworks, 
+                strategic initiatives, and global cooperation efforts.
               </p>
               
               <div className="flex flex-col items-center gap-6">
@@ -316,21 +321,19 @@ const Resources = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Join Our Mailing List
+                  JOIN OUR MAILING LIST
                   <ArrowRight className="w-4 h-4" />
                 </motion.a>
                 
+                {/* QR Code */}
                 <div className="flex flex-col items-center gap-3">
                   <p className="text-xs text-gray-500 uppercase tracking-wider">Or scan to join</p>
                   <div className="bg-white p-3 rounded-lg">
                     {qrCodeUrl && (
-                      <Image
+                      <img 
                         src={qrCodeUrl} 
                         alt="QR Code for joining AI Vision Forum mailing list"
                         className="w-32 h-32"
-                        width={128}
-                        height={128}
-                        unoptimized
                       />
                     )}
                   </div>

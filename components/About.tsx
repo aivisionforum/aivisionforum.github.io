@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Target, Eye, Heart, Globe, Sparkles, Award, TrendingUp, Users } from 'lucide-react';
+import { Target, Eye, Heart, Globe, Sparkles, Award, TrendingUp, Users, Zap } from 'lucide-react';
 
 const About = () => {
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
@@ -42,51 +42,36 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="section relative overflow-hidden">
-      {/* Impressionist background */}
+    <section id="about" className="section bg-gradient-to-b from-gray-950 via-black to-gray-950 relative overflow-hidden">
+      {/* Background effects */}
       <div className="absolute inset-0 -z-10">
-        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <defs>
-            <filter id="about-impressionist" x="-20%" y="-20%" width="140%" height="140%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.014 0.01" numOctaves="4" seed="8" result="noise" />
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-              <feGaussianBlur in="displaced" stdDeviation="26" result="soft" />
-              <feColorMatrix in="soft" type="saturate" values="1.2" />
-            </filter>
-            <filter id="about-dappled" x="-10%" y="-10%" width="120%" height="120%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.022 0.018" numOctaves="3" seed="14" result="lightNoise" />
-              <feGaussianBlur in="lightNoise" stdDeviation="16" result="softLight" />
-              <feColorMatrix in="softLight" type="luminanceToAlpha" result="lightMap" />
-              <feComponentTransfer in="lightMap">
-                <feFuncA type="linear" slope="0.3" intercept="0.04" />
-              </feComponentTransfer>
-            </filter>
-          </defs>
-          <rect width="100%" height="100%" fill="#faf5ee" />
-          <g filter="url(#about-impressionist)">
-            {/* Rose and peach — warmth */}
-            <ellipse cx="20%" cy="15%" rx="300" ry="220" fill="rgba(220, 155, 150, 0.38)" />
-            <ellipse cx="75%" cy="25%" rx="280" ry="200" fill="rgba(225, 185, 165, 0.3)" />
-            {/* Lavender blue — coolness */}
-            <ellipse cx="85%" cy="50%" rx="320" ry="260" fill="rgba(145, 175, 210, 0.32)" />
-            <ellipse cx="10%" cy="60%" rx="260" ry="200" fill="rgba(170, 190, 220, 0.25)" />
-            {/* Sage green */}
-            <ellipse cx="55%" cy="80%" rx="350" ry="220" fill="rgba(160, 190, 145, 0.3)" />
-            {/* Golden light */}
-            <ellipse cx="45%" cy="40%" rx="280" ry="200" fill="rgba(225, 200, 150, 0.26)" />
-            {/* Violet accent */}
-            <ellipse cx="65%" cy="65%" rx="200" ry="160" fill="rgba(185, 160, 200, 0.2)" />
-          </g>
-          <rect width="100%" height="100%" fill="rgba(255, 252, 242, 0.5)" filter="url(#about-dappled)" />
-        </svg>
+        <div className="absolute inset-0 grid-futuristic opacity-5" />
+        <motion.div
+          className="absolute bottom-0 right-0 w-96 h-96 rounded-full"
+          style={{
+            background: "radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+          animate={{
+            x: [0, -50, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
       </div>
       
       <div className="container relative">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="text-center mb-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -95,51 +80,76 @@ const About = () => {
             className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full mb-8"
           >
             <Award className="w-4 h-4 text-purple-400" />
-            <span className="text-sm font-medium text-gray-300 uppercase section-label">Human-Centered Alliance</span>
+            <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Global Consortium</span>
           </motion.div>
           
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="text-white">Why This</span>{" "}
-            <span className="gradient-text">Forum</span>
+            <span className="text-white">STRATEGIC</span>{" "}
+            <span className="gradient-text">VISION</span>
           </h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="space-y-4 text-left text-lg text-gray-300 leading-relaxed max-w-4xl mx-auto mt-10"
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            A global initiative uniting visionary leaders to architect 
+            the future of human-centered artificial intelligence
+          </p>
+        </motion.div>
+
+        {/* Mission Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <motion.div 
+            className="card-executive p-12 relative overflow-hidden"
+            whileHover={{ scale: 1.01 }}
           >
-            <p>
-              The AI Vision Forum is a global dialogue and research platform dedicated to advancing
-              open-source AI as a public good in support of the United Nations Sustainable Development Goals.
-              Its mission is to strengthen international collaboration around open-source AI, foster
-              evidence-based research, and explore how AI can enhance human society.
-            </p>
-            <p>
-              By convening a diverse ecosystem of researchers, policymakers, international agencies, open-source
-              communities (foundations, projects, developers, and users), and industry partners, the Forum
-              creates a trusted space for multi-stakeholder strategy exchange and joint exploration.
-            </p>
-            <p>
-              Our approach emphasizes fact-based and data-driven inquiry, supported by community participation,
-              including developers, users, local communities, and universities. Through open datasets, use-case
-              studies, and research-friendly methodologies, the Forum ensures that its outputs are rigorous,
-              transparent, and actionable.
-            </p>
-            <p>
-              We harness the power of AI-generated content (AIGC) to deliver high-quality, multi-modal, and
-              multi-platform publications, ranging from working group reports and expert interviews to white
-              papers, academic research, and reference architectures. These outputs are distributed widely across
-              multilingual channels such as CSDN, UN platforms, UNICC, foundations, and global social media
-              networks.
-            </p>
-            <p>
-              The Forum is organized annually alongside partner events worldwide, providing a
-              flagship venue for strategic dialogue, knowledge sharing, and collaborative action.
-            </p>
+            {/* Animated border gradient */}
+            <motion.div
+              className="absolute inset-0 opacity-20"
+              style={{
+                background: "linear-gradient(45deg, #00d4ff, #7c3aed, #00d4ff)",
+                backgroundSize: "200% 200%",
+              }}
+              animate={{
+                backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+            
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-400/20 rounded-full mb-6"
+              >
+                <Zap className="w-4 h-4 text-purple-400" />
+                <span className="text-xs font-bold text-purple-400 uppercase tracking-wider">Mission Critical</span>
+              </motion.div>
+              
+              <h3 className="text-3xl font-bold text-white mb-6">EXECUTIVE MANDATE</h3>
+              <motion.p 
+                className="text-lg text-gray-300 leading-relaxed"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                The AI Vision Forum serves as a global platform for strategic dialogue on 
+                artificial intelligence development, innovation, and governance. Through high-level 
+                interdisciplinary collaboration, the initiative architects frameworks ensuring human agency, 
+                transparency, and ethical imperatives remain central to AI&apos;s societal integration.
+              </motion.p>
+            </div>
           </motion.div>
         </motion.div>
 
+        {/* Core Values */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -152,7 +162,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Shared Commitments
+            Strategic Pillars
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
@@ -180,6 +190,7 @@ const About = () => {
                   <h4 className="text-lg font-bold text-white mb-2">{value.title}</h4>
                   <p className="text-sm text-gray-500">{value.description}</p>
                   
+                  {/* Status indicator */}
                   <AnimatePresence>
                     {hoveredValue === index && (
                       <motion.div
@@ -201,6 +212,7 @@ const About = () => {
           </div>
         </motion.div>
 
+        {/* Key Insights */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -213,7 +225,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Forum Insights
+            Strategic Intelligence
           </motion.h3>
           
           <div className="glass-dark rounded-2xl p-8">
@@ -282,6 +294,7 @@ const About = () => {
               </div>
             </div>
             
+            {/* Stats Bar */}
             <motion.div 
               className="mt-8 pt-8 border-t border-gray-800 flex justify-around"
               initial={{ opacity: 0 }}
@@ -332,6 +345,7 @@ const About = () => {
           </div>
         </motion.div>
 
+        {/* Partners */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -343,7 +357,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            Partners & Hosts
+            Strategic Alliance
           </motion.h3>
           <div className="flex flex-wrap justify-center gap-4">
             {partners.map((partner, index) => (
