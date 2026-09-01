@@ -10,7 +10,7 @@ const Hero = () => {
   const [textIndex, setTextIndex] = useState(0);
 
   const rotatingTexts = [
-    "Architecting the Future of Human-AI Synergy",
+    "Architecting Human-AI Synergy.",
     "Building Ethical AI Governance Frameworks",
     "Pioneering Open Source AI Innovation",
     "Shaping Tomorrow's Intelligence Landscape"
@@ -233,7 +233,7 @@ const Hero = () => {
             />
             <p className="text-lg text-gray-500 max-w-3xl mx-auto text-executive mb-12">
               An invitation-only series convening humanistic researchers, AI strategists, policymakers, and practitioners.
-              Paris 2026 is concluded — the Forum Report is published. Next: <a href="https://shenzhen2026.visionforum.ai/" className="text-cyan-400 hover:underline">Shenzhen, October 2026</a> — Robotics &amp; AI Hardware.
+              Next: <a href="https://shenzhen2026.visionforum.ai/" className="text-cyan-400 hover:underline">AI Vision Forum Shenzhen 2026</a>, taking place October 14–15 under the theme “Architecting Human-AI Synergy.”
             </p>
           </motion.div>
 
@@ -306,7 +306,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Shenzhen October 2026 →
+              Shenzhen 2026 · October 14–15 →
             </motion.a>
           </motion.div>
 
@@ -331,7 +331,7 @@ const Hero = () => {
               </motion.div>
               <div className="min-w-[140px]">
                 <span className="text-gray-600 text-xs uppercase tracking-wider block">Next Summit</span>
-                <div className="text-white text-sm mt-1 font-semibold">Shenzhen · Oct 2026</div>
+                <div className="text-white text-sm mt-1 font-semibold">Shenzhen 2026 · Oct 14–15</div>
               </div>
               <div className="min-w-[140px]">
                 <span className="text-gray-600 text-xs uppercase tracking-wider block">Active Projects</span>

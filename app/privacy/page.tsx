@@ -1,94 +1,52 @@
-"use client";
+import BilingualDocument, { type DocumentSection } from "@/components/BilingualDocument";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Shield } from 'lucide-react';
+const sections: DocumentSection[] = [
+  {
+    title: { zh: "说明", en: "Introduction" },
+    paragraphs: [{ zh: "AI Vision Forum 重视你的隐私。本政策说明当你访问网站、订阅通讯或参与论坛活动时，我们可能如何收集、使用与保护信息。", en: "AI Vision Forum respects your privacy. This policy explains how information may be collected, used and protected when you visit this site, subscribe to updates or take part in forum activities." }],
+  },
+  {
+    title: { zh: "我们收集的信息", en: "Information we collect" },
+    paragraphs: [{ zh: "我们只收集提供服务所需的信息。", en: "We collect only the information needed to provide our services." }],
+    items: [
+      { zh: "你在报名活动或订阅通讯时主动提供的姓名、电子邮箱与机构信息。", en: "Your name, email address and affiliation when you register for an event or mailing list." },
+      { zh: "网站访问与使用方式等基本技术信息。", en: "Basic technical information about how the site is accessed and used." },
+      { zh: "你通过 GitHub、邮件组或论坛讨论主动提交的内容。", en: "Content you choose to contribute through GitHub, mailing lists or forum discussions." },
+    ],
+  },
+  {
+    title: { zh: "信息用途", en: "How information is used" },
+    items: [
+      { zh: "支持你参与论坛、工作组与相关活动。", en: "To support your participation in forums, working groups and events." },
+      { zh: "发送你选择接收的报告、活动与社区动态。", en: "To send reports, event notices and community updates you have chosen to receive." },
+      { zh: "维护并改进网站与社区服务。", en: "To maintain and improve the site and community services." },
+    ],
+  },
+  {
+    title: { zh: "共享与披露", en: "Sharing and disclosure" },
+    paragraphs: [
+      { zh: "AI Vision Forum 不会出售或出租你的个人信息。", en: "AI Vision Forum does not sell or rent personal information." },
+      { zh: "在共同组织活动、提供必要技术服务或法律明确要求时，信息可能与合作机构、服务供应商或有关机关共享。我们只提供完成相应事项所需的信息。", en: "Information may be shared with event partners, essential service providers or relevant authorities when legally required. We limit sharing to what is needed for that purpose." },
+    ],
+  },
+  {
+    title: { zh: "数据安全", en: "Data security" },
+    paragraphs: [{ zh: "我们采取合理的技术与组织措施，防止信息被未经授权地访问、更改、披露或销毁。任何网络服务都无法承诺绝对安全。", en: "We use reasonable technical and organisational measures to guard against unauthorised access, alteration, disclosure or destruction. No online service can promise absolute security." }],
+  },
+  {
+    title: { zh: "你的选择与权利", en: "Your choices and rights" },
+    items: [
+      { zh: "查询我们持有的与你有关的个人信息。", en: "Ask what personal information we hold about you." },
+      { zh: "要求更正不准确的信息或删除适用范围内的信息。", en: "Request correction of inaccurate information or deletion where applicable." },
+      { zh: "通过邮件中的退订链接停止接收通讯。", en: "Stop receiving updates through the unsubscribe link in any mailing." },
+    ],
+  },
+  {
+    title: { zh: "联系我们", en: "Contact" },
+    paragraphs: [{ zh: "如对本政策或个人信息处理有疑问，请发送邮件至 contact@visionforum.ai。", en: "For questions about this policy or the handling of personal information, email contact@visionforum.ai." }],
+  },
+];
 
 export default function PrivacyPolicy() {
-  return (
-    <div className="min-h-screen bg-black text-white py-20">
-      <div className="container max-w-4xl mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="flex items-center gap-3 mb-8">
-            <Shield className="w-8 h-8 text-cyan-400" />
-            <h1 className="text-4xl font-bold">Privacy Policy</h1>
-          </div>
-          
-          <div className="prose prose-invert max-w-none">
-            <p className="text-gray-400 mb-8">Last updated: October 2024</p>
-            
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
-              <p className="text-gray-300 mb-4">
-                AI Vision Forum is committed to protecting your privacy. This Privacy Policy explains how the forum collects, uses, discloses, and safeguards your information when you visit the website or participate in activities.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">2. Information Collection</h2>
-              <p className="text-gray-300 mb-4">The forum may collect information about you in various ways:</p>
-              <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Personal Data: Name, email address, and organization affiliation when you register for events or join mailing lists</li>
-                <li>Usage Data: Information about how you interact with the website</li>
-                <li>Contributions: Content you provide through GitHub repositories or forum discussions</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">3. Information Usage</h2>
-              <p className="text-gray-300 mb-4">The collected information is used to:</p>
-              <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Facilitate participation in AI Vision Forum activities and events</li>
-                <li>Send updates about initiatives, research, and community activities</li>
-                <li>Improve the website and services</li>
-                <li>Foster collaboration within the AI community</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">4. Data Sharing and Disclosure</h2>
-              <p className="text-gray-300 mb-4">
-                AI Vision Forum does not sell, trade, or rent your personal information to third parties. Information may be shared with:
-              </p>
-              <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Partner organizations for collaborative initiatives</li>
-                <li>Service providers who assist in operations</li>
-                <li>Legal authorities when required by law</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">5. Data Security</h2>
-              <p className="text-gray-300 mb-4">
-                Appropriate technical and organizational measures are implemented to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
-              </p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">6. Your Rights</h2>
-              <p className="text-gray-300 mb-4">You have the right to:</p>
-              <ul className="list-disc pl-6 text-gray-300 space-y-2">
-                <li>Access the personal information held about you</li>
-                <li>Request correction of inaccurate information</li>
-                <li>Request deletion of your information</li>
-                <li>Opt-out of communications</li>
-              </ul>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold text-white mb-4">7. Contact Us</h2>
-              <p className="text-gray-300 mb-4">
-                If you have questions about this Privacy Policy, please contact us at:
-              </p>
-              <p className="text-cyan-400">contact@visionforum.ai</p>
-            </section>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
+  return <BilingualDocument label="POLICY 01" title={{ zh: "隐私政策", en: "Privacy Policy" }} updated={{ zh: "更新日期：2026 年 8 月", en: "Updated August 2026" }} sections={sections} />;
 }

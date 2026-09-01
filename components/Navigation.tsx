@@ -1,123 +1,75 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Menu, X, Globe } from 'lucide-react';
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
 
-const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navigation() {
+  const { language, setLanguage, text } = useLanguage();
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const navItems = [
-    { name: 'INITIATIVES', href: '#working-groups' },
-    { name: 'SUMMITS', href: '#events' },
-    { name: 'RESOURCES', href: '#resources' },
-    { name: 'CONSORTIUM', href: '#about' },
+  const toggleLanguage = () => setLanguage(language === "zh" ? "en" : "zh");
+  const links = [
+    { zh: "战略倡议", en: "Initiatives", href: "/#working-groups" },
+    { zh: "战略峰会", en: "Summits", href: "/#events" },
+    { zh: "战略资源", en: "Resources", href: "/#resources" },
+    { zh: "全球联盟", en: "Consortium", href: "/#about" },
   ];
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled ? 'glass-dark py-4' : 'bg-transparent py-6'
-    }`}>
-      <div className="container px-6">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="relative">
-              <Globe className="w-8 h-8 text-cyan-400" />
-              <div className="absolute inset-0 w-8 h-8 bg-cyan-400 blur-xl opacity-50" />
-            </div>
-            <span className="text-xl font-bold tracking-wider">
-              <span className="text-white">AI</span>
-              <span className="gradient-text">VISION</span>
-            </span>
-          </Link>
+    <header className={`avf-nav ${scrolled ? "is-scrolled" : ""}`}>
+      <div className="avf-nav__inner">
+        <Link href="/" className="avf-wordmark" aria-label={text("AI Vision Forum 首页", "AI Vision Forum home")}>
+          <span className="avf-wordmark__mark" aria-hidden="true"><i /></span>
+          <span><strong>AI Vision Forum</strong>{language === "zh" ? <small>人工智能愿景论坛</small> : null}</span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors duration-300"
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 hover:w-full" />
-              </Link>
-            ))}
-            <Link
-              href="/join"
-              className="px-6 py-2 text-xs font-medium tracking-widest text-white border border-purple-400/30 hover:bg-purple-400/10 transition-all duration-300"
-            >
-              JOIN
-            </Link>
-            <a
-              href="https://github.com/aivisionforum"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 text-xs font-medium tracking-widest text-white border border-cyan-400/30 hover:bg-cyan-400/10 transition-all duration-300"
-            >
-              ACCESS PORTAL
-            </a>
+        <nav className="avf-nav__links" aria-label={text("主导航", "Main navigation")}>
+          {links.map((link) => <Link key={link.en} href={link.href}>{language === "zh" ? link.zh : link.en}</Link>)}
+        </nav>
+
+        <div className="avf-nav__actions">
+          <div className="avf-language">
+            <button type="button" className="avf-language__switch" onClick={toggleLanguage} aria-label={text("切换为英文", "Switch to Chinese")}>
+              <span className={language === "zh" ? "is-active" : ""}>中文</span>
+              <i aria-hidden="true">/</i>
+              <span className={language === "en" ? "is-active" : ""}>EN</span>
+            </button>
           </div>
-
-          {/* Mobile Navigation Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <Link href="/join" className="avf-nav__join">{text("加入", "Join")} <ArrowUpRight /></Link>
+          <a href="https://github.com/aivisionforum" target="_blank" rel="noopener noreferrer" className="avf-nav__portal">{text("访问项目", "Access portal")}</a>
         </div>
 
-        {/* Mobile Navigation Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden mt-4 py-4 border-t border-gray-800"
-          >
-            <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <Link
-                href="/join"
-                onClick={() => setIsOpen(false)}
-                className="text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors"
-              >
-                JOIN
-              </Link>
-              <a
-                href="https://github.com/aivisionforum"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-medium tracking-widest text-gray-400 hover:text-white transition-colors"
-              >
-                ACCESS PORTAL
-              </a>
-            </div>
-          </motion.div>
-        )}
+        <button type="button" className="avf-nav__toggle" onClick={() => setOpen((value) => !value)} aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? text("关闭导航", "Close navigation") : text("打开导航", "Open navigation")}>
+          {open ? <X /> : <Menu />}
+        </button>
       </div>
-    </nav>
-  );
-};
 
-export default Navigation;
+      <div id="mobile-navigation" className={`avf-mobile-menu ${open ? "is-open" : ""}`}>
+        <div className="avf-mobile-menu__language">
+          <button type="button" className="avf-language__switch" onClick={toggleLanguage} aria-label={text("切换为英文", "Switch to Chinese")}>
+            <span className={language === "zh" ? "is-active" : ""}>中文</span>
+            <i aria-hidden="true">/</i>
+            <span className={language === "en" ? "is-active" : ""}>EN</span>
+          </button>
+        </div>
+        {links.map((link) => <Link key={link.en} href={link.href} onClick={() => setOpen(false)}>{language === "zh" ? link.zh : link.en}</Link>)}
+        <Link href="/join" className="avf-mobile-menu__join" onClick={() => setOpen(false)}>{text("加入论坛通讯", "Join the forum list")} <ArrowUpRight /></Link>
+        <a href="https://github.com/aivisionforum" target="_blank" rel="noopener noreferrer" className="avf-mobile-menu__portal">{text("访问 GitHub 项目", "Access GitHub portal")} <ArrowUpRight /></a>
+      </div>
+    </header>
+  );
+}

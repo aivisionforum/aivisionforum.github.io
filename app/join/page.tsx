@@ -1,220 +1,43 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Users, ArrowRight, Sparkles, Globe, Zap, ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function JoinMailingList() {
-  const [qrCodeUrl, setQrCodeUrl] = useState('');
-
-  useEffect(() => {
-    // Generate QR code for the Groups.io join link
-    const groupsIoUrl = 'https://aivisionforum.groups.io/g/members/join';
-    const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(groupsIoUrl)}`;
-    setQrCodeUrl(qrApiUrl);
-  }, []);
+  const { text } = useLanguage();
+  const joinUrl = "https://aivisionforum.groups.io/g/members/join";
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(joinUrl)}`;
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 grid-futuristic opacity-10" />
-        <motion.div
-          className="absolute top-20 left-20 w-72 h-72 rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%)",
-            filter: "blur(40px)",
-          }}
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
-      {/* Navigation Header */}
-      <div className="container max-w-6xl mx-auto px-6 pt-8">
-        <Link href="/" className="inline-flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
-          <ArrowLeft className="w-5 h-5" />
-          <span>Back to Home</span>
-        </Link>
-      </div>
-
-      <div className="container max-w-6xl mx-auto px-6 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
-        >
-          {/* Left Column - Form and Info */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-3 px-6 py-3 glass-dark rounded-full mb-8"
-            >
-              <Sparkles className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm font-medium text-gray-300 uppercase tracking-wider">Join the Community</span>
-            </motion.div>
-
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-white">CONNECT WITH</span>{" "}
-              <span className="gradient-text">AI VISION FORUM</span>
-            </h1>
-            
-            <p className="text-xl text-gray-400 mb-8">
-              Join the global network of AI researchers, developers, and thought leaders shaping the future of human-centric artificial intelligence.
-            </p>
-
-            {/* Benefits */}
-            <div className="space-y-4 mb-10">
-              <motion.div 
-                className="flex items-start gap-3"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <Globe className="w-5 h-5 text-cyan-400 mt-1" />
-                <div>
-                  <h3 className="text-white font-semibold">Global Network Access</h3>
-                  <p className="text-gray-500 text-sm">Connect with leading AI researchers worldwide</p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="flex items-start gap-3"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <Zap className="w-5 h-5 text-purple-400 mt-1" />
-                <div>
-                  <h3 className="text-white font-semibold">Early Access</h3>
-                  <p className="text-gray-500 text-sm">Priority registration for summits and events</p>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="flex items-start gap-3"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <Users className="w-5 h-5 text-green-400 mt-1" />
-                <div>
-                  <h3 className="text-white font-semibold">Working Group Updates</h3>
-                  <p className="text-gray-500 text-sm">Latest research and initiative progress</p>
-                </div>
-              </motion.div>
+    <main className="avf-page">
+      <div className="avf-page__shell">
+        <Link href="/" className="avf-page__back"><ArrowLeft /> {text("返回首页", "Back to home")}</Link>
+        <section className="avf-join">
+          <div className="avf-join__intro">
+            <p className="avf-eyebrow">{text("加入论坛通讯", "Join the forum list")}</p>
+            <h1>{text("保持联系，不制造噪音。", "Stay in touch, without the noise.")}</h1>
+            <p className="avf-join__lead">{text("我们只在有新报告、活动或值得继续的讨论时发信。你也可以通过邮件组加入具体议题。", "We write when there is a new report, a gathering or a conversation worth continuing. You can also join topic-specific mailing lists.")}</p>
+            <div className="avf-join__benefits">
+              <div><strong>{text("新报告", "New reports")}</strong><span>{text("论坛记录、研究成果与公开倡议。", "Forum records, research and public initiatives.")}</span></div>
+              <div><strong>{text("活动通知", "Gathering notes")}</strong><span>{text("即将举行的论坛与报名信息。", "Upcoming forums and registration information.")}</span></div>
+              <div><strong>{text("工作组进展", "Working-group updates")}</strong><span>{text("开放项目、邮件组与参与机会。", "Open projects, mailing lists and ways to contribute.")}</span></div>
             </div>
-
-            {/* Subscription Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="glass-dark rounded-xl p-8"
-            >
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                <Mail className="w-6 h-6 text-cyan-400" />
-                Subscribe to the Mailing List
-              </h2>
-              
-              <div className="text-center">
-                <p className="text-gray-400 mb-6">
-                  Click the button below to join the mailing list and connect with the global AI Vision Forum community.
-                </p>
-                
-                <motion.a
-                  href="https://aivisionforum.groups.io/g/members/join"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 btn-strategic px-8 py-4 text-lg"
-                >
-                  <Mail className="w-5 h-5" />
-                  Join the Mailing List
-                  <ArrowRight className="w-5 h-5" />
-                </motion.a>
-                
-                <div className="mt-6 p-4 bg-black/30 rounded-lg border border-gray-800">
-                  <p className="text-sm text-gray-500">
-                    You will be redirected to Groups.io to complete your subscription
-                  </p>
-                </div>
-              </div>
-              
-              <p className="text-xs text-gray-500 mt-4 text-center">
-                By subscribing, you agree to the Privacy Policy and Terms of Service.
-              </p>
-            </motion.div>
           </div>
 
-          {/* Right Column - QR Code */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7 }}
-            className="flex flex-col items-center"
-          >
-            <div className="glass-dark rounded-2xl p-8 text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Quick Access via QR Code
-              </h3>
-              <p className="text-gray-400 mb-6">
-                Scan this code to instantly access the subscription page
-              </p>
-              
-              {/* QR Code Container */}
-              <div className="bg-white p-4 rounded-xl inline-block mb-6">
-                {qrCodeUrl && (
-                  <img 
-                    src={qrCodeUrl} 
-                    alt="QR Code for joining AI Vision Forum mailing list"
-                    className="w-64 h-64"
-                  />
-                )}
-              </div>
-              
-              <div className="space-y-2">
-                <p className="text-xs text-cyan-400 font-mono break-all">
-                  aivisionforum.groups.io/g/members/join
-                </p>
-              </div>
+          <aside className="avf-join__card">
+            <h2>{text("订阅 AI Vision Forum", "Subscribe to AI Vision Forum")}</h2>
+            <p>{text("点击后将前往 Groups.io 完成订阅。你可以随时退订。", "You’ll continue to Groups.io to confirm your subscription. You can unsubscribe at any time.")}</p>
+            <a href={joinUrl} target="_blank" rel="noopener noreferrer" className="avf-button avf-button--paper">{text("前往订阅页面", "Continue to subscribe")} <ArrowRight /></a>
+            <small>{text("订阅即表示你同意本站的隐私政策与使用条款。", "By subscribing, you agree to this site’s Privacy Policy and Terms of Service.")}</small>
+            <div className="avf-join__qr">
+              <Image src={qrCodeUrl} alt={text("加入 AI Vision Forum 邮件组的二维码", "QR code for joining the AI Vision Forum mailing list")} width={94} height={94} unoptimized />
+              <div><p>{text("也可以扫码加入", "Or scan to join")}</p><span>aivisionforum.groups.io/g/members/join</span></div>
             </div>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="mt-8 grid grid-cols-3 gap-6 text-center"
-            >
-              <div>
-                <div className="text-2xl font-bold text-cyan-400">5K+</div>
-                <div className="text-xs text-gray-500 uppercase">Members</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-400">6</div>
-                <div className="text-xs text-gray-500 uppercase">Working Groups</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-green-400">20+</div>
-                <div className="text-xs text-gray-500 uppercase">Partners</div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+          </aside>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
