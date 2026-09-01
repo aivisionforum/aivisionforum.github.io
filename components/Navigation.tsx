@@ -32,9 +32,9 @@ export default function Navigation() {
   return (
     <header className={`avf-nav ${scrolled ? "is-scrolled" : ""}`}>
       <div className="avf-nav__inner">
-        <Link href="/" className="avf-wordmark" aria-label={text("AI Vision Forum 首页", "AI Vision Forum home")}>
-          <span className="avf-wordmark__mark" aria-hidden="true"><i /></span>
-          <span><strong>AI Vision Forum</strong>{language === "zh" ? <small>人工智能愿景论坛</small> : null}</span>
+        <Link href="/" className="avf-wordmark" aria-label={text("AI 愿景论坛首页", "AI Vision Forum home")}>
+          <span className="avf-wordmark__mark" aria-hidden="true">AIVF</span>
+          <span><strong>AI Vision Forum</strong>{language === "zh" ? <small>AI 愿景论坛</small> : null}</span>
         </Link>
 
         <nav className="avf-nav__links" aria-label={text("主导航", "Main navigation")}>

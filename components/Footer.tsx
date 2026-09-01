@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="avf-footer__top">
         <div>
           <p className="avf-footer__name">AI Vision Forum</p>
-          {language === "zh" ? <p className="avf-footer__cn">人工智能愿景论坛</p> : null}
+          {language === "zh" ? <p className="avf-footer__cn">AI 愿景论坛</p> : null}
         </div>
         <p className="avf-footer__statement">
           {text("全球 AI 治理与以人为本创新的战略枢纽。", "Strategic nexus for global AI governance and human-centered innovation.")}

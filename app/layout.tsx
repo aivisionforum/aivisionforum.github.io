@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://visionforum.ai"),
-  title: "AI Vision Forum｜人工智能愿景论坛",
+  title: "AI Vision Forum｜AI 愿景论坛",
   description: "An independent international forum for thoughtful conversations about AI and society. 一个讨论人工智能、社会与公共价值的独立国际论坛。",
   keywords: "AI, Vision Forum, GOSIM, human-centered AI, open source AI, AI governance, AI ethics",
   openGraph: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Vision Forum｜人工智能愿景论坛",
+    title: "AI Vision Forum｜AI 愿景论坛",
     description: "Conversations on AI, society and public value",
   },
 };
