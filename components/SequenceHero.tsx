@@ -7,7 +7,7 @@ import RotatingVisionLine from "./RotatingVisionLine";
 
 const clips = ["1.mp4", "2.mp4", "3.mp4", "4.mp4", "5.mp4", "6.mp4", "7.mp4", "8.mp4"];
 const CLIP_DURATION_MS = 5000;
-const CLIP_VERSION = "folder-20260831-720";
+const CLIP_VERSION = "folder-20260831-720-r2";
 
 export default function SequenceHero() {
   const { text } = useLanguage();

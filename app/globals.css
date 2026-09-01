@@ -6781,8 +6781,11 @@ a.avf-topic:hover {
   padding: 54px;
   border: 1px solid #91adff;
   background:
-    radial-gradient(circle at 88% 18%, rgba(114, 150, 255, 0.22), transparent 34%),
-    linear-gradient(135deg, #121828 0%, #090b11 70%);
+    linear-gradient(90deg, rgba(5, 8, 15, 0.94) 0%, rgba(7, 10, 18, 0.88) 40%, rgba(7, 10, 18, 0.62) 70%, rgba(7, 10, 18, 0.38) 100%),
+    linear-gradient(0deg, rgba(5, 8, 15, 0.68) 0%, rgba(5, 8, 15, 0.08) 58%),
+    url("/images/shenzhen-2026-background.jpg");
+  background-position: center, center, 58% center;
+  background-size: cover;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
 }
 
@@ -7249,6 +7252,10 @@ a.avf-topic:hover {
   .avf-gathering--featured::before {
     right: 18px;
     font-size: 7rem;
+  }
+
+  .avf-gathering--featured {
+    background-position: center, center, 64% center;
   }
 
   .avf-regional {
