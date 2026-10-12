@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 
@@ -21,10 +22,9 @@ export default function Footer() {
   return (
     <footer className="avf-footer">
       <div className="avf-footer__top">
-        <div>
-          <p className="avf-footer__name">AI Vision Forum</p>
-          {language === "zh" ? <p className="avf-footer__cn">AI 愿景论坛</p> : null}
-        </div>
+        <Link href="/" className="avf-footer__brand" aria-label={text("AI 愿景论坛首页", "AI Vision Forum home")}>
+          <Image className="avf-footer__logo" src="/brand/aivf-logo-transparent.png" alt="AI Vision Forum · AI 愿景论坛" width={1680} height={480} />
+        </Link>
         <p className="avf-footer__statement">
           {text("全球 AI 治理与以人为本创新的战略枢纽。", "Strategic nexus for global AI governance and human-centered innovation.")}
         </p>

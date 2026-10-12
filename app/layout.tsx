@@ -20,6 +20,10 @@ export const metadata: Metadata = {
   title: "AI Vision Forum｜AI 愿景论坛",
   description: "An independent international forum for thoughtful conversations about AI and society. 一个讨论人工智能、社会与公共价值的独立国际论坛。",
   keywords: "AI, Vision Forum, GOSIM, human-centered AI, open source AI, AI governance, AI ethics",
+  icons: {
+    icon: [{ url: "/brand/aivf-avatar-transparent.png", type: "image/png", sizes: "1024x1024" }],
+    apple: [{ url: "/brand/aivf-avatar-transparent.png", type: "image/png", sizes: "1024x1024" }],
+  },
   openGraph: {
     title: "AI Vision Forum",
     description: "Conversations on AI, society and public value｜关于人工智能、社会与公共价值的对话",

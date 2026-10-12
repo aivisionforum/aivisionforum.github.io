@@ -8296,31 +8296,29 @@ a.avf-topic:focus-visible .avf-topic__arrow {
   }
 }
 
-/* Shared AIVF brand mark, matching the restrained Shenzhen identity. */
-.avf-wordmark__mark {
-  display: grid;
-  width: 54px;
-  height: 34px;
-  place-items: center;
-  border: 1.5px solid currentColor;
-  border-radius: 0;
-  color: #f4f5f7;
-  font-family: var(--font-geist-sans), sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.045em;
+/* Transparent AIVF assets on the site's dark navigation and footer. */
+.avf-wordmark__avatar {
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: none;
+  object-fit: contain;
 }
 
-.avf-wordmark__mark::before,
-.avf-wordmark__mark::after {
-  display: none;
+.avf-footer__brand {
+  display: block;
+  width: min(100%, 520px);
+}
+
+.avf-footer__logo {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 720px) {
-  .avf-wordmark__mark {
-    width: 48px;
-    height: 32px;
-    font-size: 13px;
+  .avf-wordmark__avatar {
+    width: 52px;
+    height: 52px;
   }
 }

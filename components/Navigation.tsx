@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
@@ -33,7 +34,7 @@ export default function Navigation() {
     <header className={`avf-nav ${scrolled ? "is-scrolled" : ""}`}>
       <div className="avf-nav__inner">
         <Link href="/" className="avf-wordmark" aria-label={text("AI 愿景论坛首页", "AI Vision Forum home")}>
-          <span className="avf-wordmark__mark" aria-hidden="true">AIVF</span>
+          <Image className="avf-wordmark__avatar" src="/brand/aivf-avatar-transparent.png" alt="" width={1024} height={1024} priority />
           <span><strong>AI Vision Forum</strong>{language === "zh" ? <small>AI 愿景论坛</small> : null}</span>
         </Link>
 
